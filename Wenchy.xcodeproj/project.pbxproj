@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C117BC0A20265F9C00ACC1E7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117BC0920265F9C00ACC1E7 /* RegisterViewController.swift */; };
+		C117BC0C2026690500ACC1E7 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117BC0B2026690500ACC1E7 /* ResetViewController.swift */; };
+		C117BC0E20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC0D20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework */; };
+		C117BC1020266B2100ACC1E7 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC0F20266B2100ACC1E7 /* SideMenu.framework */; };
+		C117BC1C2026804D00ACC1E7 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC192026804C00ACC1E7 /* FacebookCore.framework */; };
+		C117BC1D2026804D00ACC1E7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC1A2026804D00ACC1E7 /* FBSDKCoreKit.framework */; };
+		C117BC1E2026804D00ACC1E7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC1B2026804D00ACC1E7 /* Bolts.framework */; };
+		C117BC212026807D00ACC1E7 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC202026807D00ACC1E7 /* FacebookLogin.framework */; };
+		C117BC23202682F800ACC1E7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC22202682F700ACC1E7 /* FBSDKLoginKit.framework */; };
+		C122A78A1FEAAA2300EABFD8 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = C122A7891FEAAA2300EABFD8 /* Cartfile */; };
+		C12FEDA71FE9DC82002FC3EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12FEDA61FE9DC82002FC3EA /* AppDelegate.swift */; };
+		C12FEDA91FE9DC82002FC3EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12FEDA81FE9DC82002FC3EA /* MainViewController.swift */; };
+		C12FEDAC1FE9DC82002FC3EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12FEDAA1FE9DC82002FC3EA /* Main.storyboard */; };
+		C12FEDAE1FE9DC82002FC3EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C12FEDAD1FE9DC82002FC3EA /* Assets.xcassets */; };
+		C12FEDB11FE9DC82002FC3EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12FEDAF1FE9DC82002FC3EA /* LaunchScreen.storyboard */; };
+		C1406D601FEFF65500D1DC7E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1406D5F1FEFF65500D1DC7E /* LoginViewController.swift */; };
+		C1680AE2202CF872001FA27D /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1680AE1202CF872001FA27D /* GoogleSignIn.framework */; };
+		C1864C29202C78CF00951538 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1864C28202C78CF00951538 /* LaunchViewController.swift */; };
+		C19217D31FEE7381006B1ED9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19217D21FEE7381006B1ED9 /* MapKit.framework */; };
+		C19217D51FEE9FA2006B1ED9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19217D41FEE9FA2006B1ED9 /* CoreLocation.framework */; };
+		C19DB099202650D700EDA208 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB098202650D700EDA208 /* Utils.swift */; };
+		C1FC54152025C40300B910CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1FC54142025C40300B910CB /* GoogleService-Info.plist */; };
+		C1FC54172025C53500B910CB /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC54162025C53500B910CB /* FirebaseAnalytics.framework */; };
+		C1FC54222025D2A100B910CB /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC54182025D29E00B910CB /* FirebaseInstanceID.framework */; };
+		C1FC54232025D2A100B910CB /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC54192025D29F00B910CB /* FirebaseDatabase.framework */; };
+		C1FC54242025D2A100B910CB /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC541A2025D29F00B910CB /* FirebaseCore.framework */; };
+		C1FC54252025D2A100B910CB /* FirebaseNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC541B2025D29F00B910CB /* FirebaseNanoPB.framework */; };
+		C1FC54262025D2A100B910CB /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC541C2025D29F00B910CB /* FirebaseAuth.framework */; };
+		C1FC54272025D2A100B910CB /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC541D2025D2A000B910CB /* nanopb.framework */; };
+		C1FC54282025D2A100B910CB /* leveldb-library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC541E2025D2A000B910CB /* leveldb-library.framework */; };
+		C1FC54292025D2A100B910CB /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC541F2025D2A000B910CB /* FirebaseCoreDiagnostics.framework */; };
+		C1FC542A2025D2A100B910CB /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC54202025D2A000B910CB /* GTMSessionFetcher.framework */; };
+		C1FC542B2025D2A100B910CB /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC54212025D2A100B910CB /* GoogleToolboxForMac.framework */; };
+		C1FEAC4B1FF54D0000564089 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FEAC4A1FF54D0000564089 /* SettingsViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C117BC0920265F9C00ACC1E7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C117BC0B2026690500ACC1E7 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
+		C117BC0D20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		C117BC0F20266B2100ACC1E7 /* SideMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SideMenu.framework; path = Carthage/Build/iOS/SideMenu.framework; sourceTree = "<group>"; };
+		C117BC192026804C00ACC1E7 /* FacebookCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookCore.framework; path = Carthage/Build/iOS/FacebookCore.framework; sourceTree = "<group>"; };
+		C117BC1A2026804D00ACC1E7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Carthage/Build/iOS/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		C117BC1B2026804D00ACC1E7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		C117BC202026807D00ACC1E7 /* FacebookLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookLogin.framework; path = Carthage/Build/iOS/FacebookLogin.framework; sourceTree = "<group>"; };
+		C117BC22202682F700ACC1E7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Carthage/Build/iOS/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C122A7891FEAAA2300EABFD8 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		C12FEDA31FE9DC82002FC3EA /* Wenchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wenchy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C12FEDA61FE9DC82002FC3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C12FEDA81FE9DC82002FC3EA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C12FEDAB1FE9DC82002FC3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C12FEDAD1FE9DC82002FC3EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C12FEDB01FE9DC82002FC3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C12FEDB21FE9DC82002FC3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1406D5F1FEFF65500D1DC7E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C1680AE1202CF872001FA27D /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Carthage/Build/iOS/GoogleSignIn.framework; sourceTree = "<group>"; };
+		C1864C28202C78CF00951538 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		C19217D21FEE7381006B1ED9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C19217D41FEE9FA2006B1ED9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C19DB098202650D700EDA208 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		C1E2B5C9202D19C500C0D4A7 /* Wenchy.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Wenchy.xcconfig; sourceTree = SOURCE_ROOT; };
+		C1FC54142025C40300B910CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C1FC54162025C53500B910CB /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		C1FC54182025D29E00B910CB /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Carthage/Build/iOS/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		C1FC54192025D29F00B910CB /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Carthage/Build/iOS/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		C1FC541A2025D29F00B910CB /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
+		C1FC541B2025D29F00B910CB /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Carthage/Build/iOS/FirebaseNanoPB.framework; sourceTree = "<group>"; };
+		C1FC541C2025D29F00B910CB /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Carthage/Build/iOS/FirebaseAuth.framework; sourceTree = "<group>"; };
+		C1FC541D2025D2A000B910CB /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
+		C1FC541E2025D2A000B910CB /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "leveldb-library.framework"; path = "Carthage/Build/iOS/leveldb-library.framework"; sourceTree = "<group>"; };
+		C1FC541F2025D2A000B910CB /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		C1FC54202025D2A000B910CB /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GTMSessionFetcher.framework; path = Carthage/Build/iOS/GTMSessionFetcher.framework; sourceTree = "<group>"; };
+		C1FC54212025D2A100B910CB /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = Carthage/Build/iOS/GoogleToolboxForMac.framework; sourceTree = "<group>"; };
+		C1FEAC4A1FF54D0000564089 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C12FEDA01FE9DC82002FC3EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1FC54252025D2A100B910CB /* FirebaseNanoPB.framework in Frameworks */,
+				C117BC0E20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				C1FC54292025D2A100B910CB /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				C1FC54232025D2A100B910CB /* FirebaseDatabase.framework in Frameworks */,
+				C1FC54272025D2A100B910CB /* nanopb.framework in Frameworks */,
+				C19217D51FEE9FA2006B1ED9 /* CoreLocation.framework in Frameworks */,
+				C117BC1020266B2100ACC1E7 /* SideMenu.framework in Frameworks */,
+				C1FC54222025D2A100B910CB /* FirebaseInstanceID.framework in Frameworks */,
+				C1FC54282025D2A100B910CB /* leveldb-library.framework in Frameworks */,
+				C1FC54242025D2A100B910CB /* FirebaseCore.framework in Frameworks */,
+				C1FC542B2025D2A100B910CB /* GoogleToolboxForMac.framework in Frameworks */,
+				C19217D31FEE7381006B1ED9 /* MapKit.framework in Frameworks */,
+				C1FC54262025D2A100B910CB /* FirebaseAuth.framework in Frameworks */,
+				C1FC542A2025D2A100B910CB /* GTMSessionFetcher.framework in Frameworks */,
+				C1FC54172025C53500B910CB /* FirebaseAnalytics.framework in Frameworks */,
+				C117BC212026807D00ACC1E7 /* FacebookLogin.framework in Frameworks */,
+				C117BC1C2026804D00ACC1E7 /* FacebookCore.framework in Frameworks */,
+				C117BC1D2026804D00ACC1E7 /* FBSDKCoreKit.framework in Frameworks */,
+				C117BC1E2026804D00ACC1E7 /* Bolts.framework in Frameworks */,
+				C117BC23202682F800ACC1E7 /* FBSDKLoginKit.framework in Frameworks */,
+				C1680AE2202CF872001FA27D /* GoogleSignIn.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C117BC1F2026805100ACC1E7 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				C117BC1B2026804D00ACC1E7 /* Bolts.framework */,
+				C117BC192026804C00ACC1E7 /* FacebookCore.framework */,
+				C117BC202026807D00ACC1E7 /* FacebookLogin.framework */,
+				C117BC1A2026804D00ACC1E7 /* FBSDKCoreKit.framework */,
+				C117BC22202682F700ACC1E7 /* FBSDKLoginKit.framework */,
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
+		C122A78B1FEAAD3200EABFD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1FC542D2025D33A00B910CB /* KeyboardManager */,
+				C1FC542E2025D34E00B910CB /* SideMenu */,
+				C1FC542C2025D30E00B910CB /* Firebase */,
+				C117BC1F2026805100ACC1E7 /* Facebook */,
+				C1680AE0202CF845001FA27D /* Google */,
+				C19217D41FEE9FA2006B1ED9 /* CoreLocation.framework */,
+				C19217D21FEE7381006B1ED9 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C12FED9A1FE9DC82002FC3EA = {
+			isa = PBXGroup;
+			children = (
+				C12FEDA51FE9DC82002FC3EA /* Wenchy */,
+				C12FEDA41FE9DC82002FC3EA /* Products */,
+				C122A78B1FEAAD3200EABFD8 /* Frameworks */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+		};
+		C12FEDA41FE9DC82002FC3EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C12FEDA31FE9DC82002FC3EA /* Wenchy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C12FEDA51FE9DC82002FC3EA /* Wenchy */ = {
+			isa = PBXGroup;
+			children = (
+				C12FEDB91FE9DD1C002FC3EA /* --- */,
+				C12FEDAA1FE9DC82002FC3EA /* Main.storyboard */,
+				C12FEDA61FE9DC82002FC3EA /* AppDelegate.swift */,
+				C1864C28202C78CF00951538 /* LaunchViewController.swift */,
+				C12FEDA81FE9DC82002FC3EA /* MainViewController.swift */,
+				C1406D5E1FEFF5C900D1DC7E /* Auth */,
+				C1FEAC491FF54CE000564089 /* Settings */,
+				C19DB097202650C200EDA208 /* Shared */,
+				C122A7891FEAAA2300EABFD8 /* Cartfile */,
+			);
+			path = Wenchy;
+			sourceTree = "<group>";
+		};
+		C12FEDB91FE9DD1C002FC3EA /* --- */ = {
+			isa = PBXGroup;
+			children = (
+				C12FEDAD1FE9DC82002FC3EA /* Assets.xcassets */,
+				C12FEDAF1FE9DC82002FC3EA /* LaunchScreen.storyboard */,
+				C12FEDB21FE9DC82002FC3EA /* Info.plist */,
+				C1FC54142025C40300B910CB /* GoogleService-Info.plist */,
+				C1E2B5C9202D19C500C0D4A7 /* Wenchy.xcconfig */,
+			);
+			name = "---";
+			sourceTree = "<group>";
+		};
+		C1406D5E1FEFF5C900D1DC7E /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C1406D5F1FEFF65500D1DC7E /* LoginViewController.swift */,
+				C117BC0920265F9C00ACC1E7 /* RegisterViewController.swift */,
+				C117BC0B2026690500ACC1E7 /* ResetViewController.swift */,
+			);
+			name = Auth;
+			sourceTree = "<group>";
+		};
+		C1680AE0202CF845001FA27D /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				C1680AE1202CF872001FA27D /* GoogleSignIn.framework */,
+			);
+			name = Google;
+			sourceTree = "<group>";
+		};
+		C19DB097202650C200EDA208 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C19DB098202650D700EDA208 /* Utils.swift */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		C1FC542C2025D30E00B910CB /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				C1FC54162025C53500B910CB /* FirebaseAnalytics.framework */,
+				C1FC541C2025D29F00B910CB /* FirebaseAuth.framework */,
+				C1FC541A2025D29F00B910CB /* FirebaseCore.framework */,
+				C1FC541F2025D2A000B910CB /* FirebaseCoreDiagnostics.framework */,
+				C1FC54192025D29F00B910CB /* FirebaseDatabase.framework */,
+				C1FC54182025D29E00B910CB /* FirebaseInstanceID.framework */,
+				C1FC541B2025D29F00B910CB /* FirebaseNanoPB.framework */,
+				C1FC54212025D2A100B910CB /* GoogleToolboxForMac.framework */,
+				C1FC54202025D2A000B910CB /* GTMSessionFetcher.framework */,
+				C1FC541E2025D2A000B910CB /* leveldb-library.framework */,
+				C1FC541D2025D2A000B910CB /* nanopb.framework */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
+		C1FC542D2025D33A00B910CB /* KeyboardManager */ = {
+			isa = PBXGroup;
+			children = (
+				C117BC0D20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework */,
+			);
+			name = KeyboardManager;
+			sourceTree = "<group>";
+		};
+		C1FC542E2025D34E00B910CB /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C117BC0F20266B2100ACC1E7 /* SideMenu.framework */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		C1FEAC491FF54CE000564089 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C1FEAC4A1FF54D0000564089 /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C12FEDA21FE9DC82002FC3EA /* Wenchy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C12FEDB51FE9DC82002FC3EA /* Build configuration list for PBXNativeTarget "Wenchy" */;
+			buildPhases = (
+				C12FED9F1FE9DC82002FC3EA /* Sources */,
+				C12FEDA01FE9DC82002FC3EA /* Frameworks */,
+				C12FEDA11FE9DC82002FC3EA /* Resources */,
+				C117BC1820266BD100ACC1E7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wenchy;
+			productName = Wenchy;
+			productReference = C12FEDA31FE9DC82002FC3EA /* Wenchy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C12FED9B1FE9DC82002FC3EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = RaMin0;
+				TargetAttributes = {
+					C12FEDA21FE9DC82002FC3EA = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = C12FED9E1FE9DC82002FC3EA /* Build configuration list for PBXProject "Wenchy" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C12FED9A1FE9DC82002FC3EA;
+			productRefGroup = C12FEDA41FE9DC82002FC3EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C12FEDA21FE9DC82002FC3EA /* Wenchy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C12FEDA11FE9DC82002FC3EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C12FEDB11FE9DC82002FC3EA /* LaunchScreen.storyboard in Resources */,
+				C12FEDAE1FE9DC82002FC3EA /* Assets.xcassets in Resources */,
+				C1FC54152025C40300B910CB /* GoogleService-Info.plist in Resources */,
+				C122A78A1FEAAA2300EABFD8 /* Cartfile in Resources */,
+				C12FEDAC1FE9DC82002FC3EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C117BC1820266BD100ACC1E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SideMenu.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Bolts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookCore.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FacebookLogin.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/GoogleSignIn.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SideMenu.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Bolts.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FacebookCore.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FacebookLogin.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FBSDKCoreKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FBSDKLoginKit.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GoogleSignIn.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C12FED9F1FE9DC82002FC3EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C19DB099202650D700EDA208 /* Utils.swift in Sources */,
+				C12FEDA91FE9DC82002FC3EA /* MainViewController.swift in Sources */,
+				C1406D601FEFF65500D1DC7E /* LoginViewController.swift in Sources */,
+				C117BC0A20265F9C00ACC1E7 /* RegisterViewController.swift in Sources */,
+				C12FEDA71FE9DC82002FC3EA /* AppDelegate.swift in Sources */,
+				C117BC0C2026690500ACC1E7 /* ResetViewController.swift in Sources */,
+				C1FEAC4B1FF54D0000564089 /* SettingsViewController.swift in Sources */,
+				C1864C29202C78CF00951538 /* LaunchViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C12FEDAA1FE9DC82002FC3EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C12FEDAB1FE9DC82002FC3EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C12FEDAF1FE9DC82002FC3EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C12FEDB01FE9DC82002FC3EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C12FEDB31FE9DC82002FC3EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C12FEDB41FE9DC82002FC3EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C12FEDB61FE9DC82002FC3EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1E2B5C9202D19C500C0D4A7 /* Wenchy.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VD5M8XYRZT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Wenchy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.ramin0.Wenchy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C12FEDB71FE9DC82002FC3EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1E2B5C9202D19C500C0D4A7 /* Wenchy.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VD5M8XYRZT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Wenchy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.ramin0.Wenchy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C12FED9E1FE9DC82002FC3EA /* Build configuration list for PBXProject "Wenchy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C12FEDB31FE9DC82002FC3EA /* Debug */,
+				C12FEDB41FE9DC82002FC3EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C12FEDB51FE9DC82002FC3EA /* Build configuration list for PBXNativeTarget "Wenchy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C12FEDB61FE9DC82002FC3EA /* Debug */,
+				C12FEDB71FE9DC82002FC3EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C12FED9B1FE9DC82002FC3EA /* Project object */;
+}
