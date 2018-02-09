@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
   @IBOutlet weak var carTypeTextField: UITextField!
   @IBOutlet weak var carModelTextField: UITextField!
   @IBOutlet weak var addressTextField: UITextField!
+  @IBOutlet weak var roleSwitch: UISwitch!
 
   @IBOutlet weak var nameTextFieldTopSpacing: NSLayoutConstraint!
   @IBOutlet weak var nameTextFieldHeight: NSLayoutConstraint!
@@ -71,13 +72,16 @@ class RegisterViewController: UIViewController {
           return
     }
 
+    let role = roleSwitch.isOn ? "Driver" : "Customer"
+
     userData = [
       "name": name,
       "email": email,
       "mobile": mobile,
       "carType": carType,
       "carModel": carModel,
-      "address": address
+      "address": address,
+      "role": role
     ]
 
     if let _ = userUid {

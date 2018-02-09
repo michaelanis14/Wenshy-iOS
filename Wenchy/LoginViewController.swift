@@ -111,7 +111,7 @@ class LoginViewController: UIViewController {
         .observeSingleEvent(of: .value) { snapshot in
           dismissLoader()
 
-          guard let value = snapshot.value as? [String: Any], let _ = value["mobile"] else {
+          guard let value = snapshot.value as? [String: Any], let _ = value["role"] else {
             if let profile = result.additionalUserInfo?.profile {
               let userData: [String : Any] = [
                 "uid": result.user.uid,

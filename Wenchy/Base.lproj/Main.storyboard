@@ -525,10 +525,27 @@
                                     <action selector="handleRegisterButton" destination="wBM-gb-DTI" eventType="touchUpInside" id="0NH-lj-co5"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TCG-cq-0ps">
+                                <rect key="frame" x="163" y="526" width="51" height="31"/>
+                                <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUSTOMER" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djX-ZV-Iuo">
+                                <rect key="frame" x="16" y="531" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DRIVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRU-QU-5Xl">
+                                <rect key="frame" x="220" y="531" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="NwS-br-Icb" firstAttribute="top" secondItem="cyN-r5-khZ" secondAttribute="bottom" constant="8" symbolic="YES" id="03w-Ws-So1"/>
+                            <constraint firstItem="TCG-cq-0ps" firstAttribute="centerX" secondItem="Fhs-DP-9g6" secondAttribute="centerX" id="0Cw-NP-T9l"/>
                             <constraint firstItem="Jew-na-hM6" firstAttribute="leading" secondItem="Fhs-DP-9g6" secondAttribute="leadingMargin" id="1QF-vW-Tn4"/>
                             <constraint firstItem="maP-Ps-I6H" firstAttribute="leading" secondItem="Fhs-DP-9g6" secondAttribute="leadingMargin" id="1Z6-28-Gqa"/>
                             <constraint firstItem="XAq-bN-mTr" firstAttribute="trailing" secondItem="Fhs-DP-9g6" secondAttribute="trailingMargin" id="2jg-dp-35k"/>
@@ -536,14 +553,19 @@
                             <constraint firstItem="chk-KS-klv" firstAttribute="trailing" secondItem="Fhs-DP-9g6" secondAttribute="trailingMargin" id="6Gn-CP-Pxw"/>
                             <constraint firstItem="n0k-PZ-5gr" firstAttribute="leading" secondItem="Fhs-DP-9g6" secondAttribute="leadingMargin" id="7ju-wr-sYn"/>
                             <constraint firstItem="chk-KS-klv" firstAttribute="leading" secondItem="Fhs-DP-9g6" secondAttribute="leadingMargin" id="81d-84-oM3"/>
+                            <constraint firstItem="kRU-QU-5Xl" firstAttribute="trailing" secondItem="Fhs-DP-9g6" secondAttribute="trailingMargin" id="8cl-Ez-yW4"/>
                             <constraint firstItem="Mts-Ed-5Fd" firstAttribute="trailing" secondItem="Fhs-DP-9g6" secondAttribute="trailingMargin" id="8gi-a1-u96"/>
                             <constraint firstItem="Jew-na-hM6" firstAttribute="trailing" secondItem="Fhs-DP-9g6" secondAttribute="trailingMargin" id="Cg5-Kg-CZP"/>
+                            <constraint firstItem="djX-ZV-Iuo" firstAttribute="centerY" secondItem="TCG-cq-0ps" secondAttribute="centerY" id="DtD-B6-zgK"/>
                             <constraint firstItem="NwS-br-Icb" firstAttribute="leading" secondItem="Fhs-DP-9g6" secondAttribute="leadingMargin" id="FV2-mg-Wie"/>
                             <constraint firstItem="NwS-br-Icb" firstAttribute="trailing" secondItem="Fhs-DP-9g6" secondAttribute="trailingMargin" id="FVL-NO-B9h"/>
+                            <constraint firstItem="TCG-cq-0ps" firstAttribute="leading" secondItem="djX-ZV-Iuo" secondAttribute="trailing" constant="8" symbolic="YES" id="IKb-Oi-JHe"/>
+                            <constraint firstItem="kRU-QU-5Xl" firstAttribute="centerY" secondItem="TCG-cq-0ps" secondAttribute="centerY" id="LKn-RG-gdD"/>
                             <constraint firstItem="Mts-Ed-5Fd" firstAttribute="top" secondItem="Jew-na-hM6" secondAttribute="bottom" constant="8" symbolic="YES" id="N7D-9I-Qul"/>
                             <constraint firstItem="chk-KS-klv" firstAttribute="top" secondItem="maP-Ps-I6H" secondAttribute="bottom" constant="8" symbolic="YES" id="Pk4-u4-ScX"/>
                             <constraint firstItem="Jew-na-hM6" firstAttribute="top" secondItem="NwS-br-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="RFT-wH-4ec"/>
                             <constraint firstItem="maP-Ps-I6H" firstAttribute="top" secondItem="XAq-bN-mTr" secondAttribute="bottom" constant="8" symbolic="YES" id="UDT-A9-M9V"/>
+                            <constraint firstItem="kRU-QU-5Xl" firstAttribute="leading" secondItem="TCG-cq-0ps" secondAttribute="trailing" constant="8" symbolic="YES" id="UJJ-Km-Hkx"/>
                             <constraint firstItem="cyN-r5-khZ" firstAttribute="trailing" secondItem="Fhs-DP-9g6" secondAttribute="trailingMargin" id="UN5-nI-b4j"/>
                             <constraint firstItem="maP-Ps-I6H" firstAttribute="trailing" secondItem="Fhs-DP-9g6" secondAttribute="trailingMargin" id="Xov-P7-0Ie"/>
                             <constraint firstItem="Jc6-GC-svr" firstAttribute="leading" secondItem="Fhs-DP-9g6" secondAttribute="leadingMargin" id="brU-aN-j6a"/>
@@ -552,9 +574,11 @@
                             <constraint firstItem="cyN-r5-khZ" firstAttribute="leading" secondItem="Fhs-DP-9g6" secondAttribute="leadingMargin" id="fIW-4K-5fO"/>
                             <constraint firstItem="XAq-bN-mTr" firstAttribute="leading" secondItem="Fhs-DP-9g6" secondAttribute="leadingMargin" id="kap-aP-kWF"/>
                             <constraint firstItem="rOu-zk-2Yp" firstAttribute="top" secondItem="Jc6-GC-svr" secondAttribute="bottom" constant="8" symbolic="YES" id="lOo-3W-Ud2"/>
+                            <constraint firstItem="djX-ZV-Iuo" firstAttribute="leading" secondItem="Fhs-DP-9g6" secondAttribute="leadingMargin" id="m5d-PK-pWs"/>
                             <constraint firstItem="n0k-PZ-5gr" firstAttribute="trailing" secondItem="Fhs-DP-9g6" secondAttribute="trailingMargin" id="n43-CH-9gh"/>
                             <constraint firstItem="cyN-r5-khZ" firstAttribute="top" secondItem="ryv-l0-UOO" secondAttribute="bottom" constant="8" symbolic="YES" id="njz-9p-O9G"/>
                             <constraint firstItem="XAq-bN-mTr" firstAttribute="top" secondItem="Mts-Ed-5Fd" secondAttribute="bottom" constant="8" symbolic="YES" id="rut-52-DEU"/>
+                            <constraint firstItem="TCG-cq-0ps" firstAttribute="top" secondItem="n0k-PZ-5gr" secondAttribute="bottom" constant="8" symbolic="YES" id="v7T-cq-jGn"/>
                         </constraints>
                     </view>
                     <connections>
@@ -571,11 +595,12 @@
                         <outlet property="passwordTextField" destination="Mts-Ed-5Fd" id="I3e-jv-tCd"/>
                         <outlet property="passwordTextFieldHeight" destination="z7K-dP-Ggy" id="XBo-QY-VOU"/>
                         <outlet property="passwordTextFieldTopSpacing" destination="N7D-9I-Qul" id="SrK-bw-6sV"/>
+                        <outlet property="roleSwitch" destination="TCG-cq-0ps" id="NRV-pz-DLw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhU-Cj-Yzg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2666" y="143"/>
+            <point key="canvasLocation" x="2665.5" y="142.5"/>
         </scene>
         <!--Launch Navigation Controller-->
         <scene sceneID="ry9-sb-3KV">
