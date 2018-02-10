@@ -151,6 +151,8 @@ extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
     dismissLoader()
 
     if let error = error {
+      if case .canceled = GIDSignInErrorCode(rawValue: error._code)! { return }
+
       self.present(buildAlert(withTitle: "Error",
                               message: error.localizedDescription),
                    animated: true)

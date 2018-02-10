@@ -12,26 +12,24 @@ import FacebookLogin
 import GoogleSignIn
 
 class SideMenuTableViewController: UITableViewController {
+  @IBOutlet weak var profileView: UIView!
   @IBOutlet weak var avatarImageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    tableView.backgroundView = UIView(frame: CGRect(x: 0, y: 0,
+                                                    width: tableView.bounds.size.width,
+                                                    height: tableView.bounds.size.height))
+    tableView.backgroundColor = profileView.backgroundColor
+    tableView.delegate = self
+
     avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
-    avatarImageView.clipsToBounds = true
 
-    nameLabel.text = Auth.auth().currentUser?.displayName
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    super.viewWillAppear(animated)
-  }
-
-  override func viewWillDisappear(_ animated: Bool) {
-    self.navigationController?.setNavigationBarHidden(false, animated: animated)
-    super.viewWillDisappear(animated)
+    if let user = Auth.auth().currentUser {
+      nameLabel.text = user.displayName ?? user.email
+    }
   }
 
   @IBAction func handleLogoutButton() {
@@ -43,5 +41,15 @@ class SideMenuTableViewController: UITableViewController {
     dismiss(animated: true) {
       vc?.viewDidAppear(true)
     }
+  }
+}
+
+extension SideMenuTableViewController {
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    return profileView
+  }
+
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return profileView.frame.size.height
   }
 }

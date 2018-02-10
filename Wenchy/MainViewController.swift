@@ -28,12 +28,12 @@ class MainViewController: UIViewController {
     locationManager.requestWhenInUseAuthorization()
     locationManager.startUpdatingLocation()
 
-    self.sideMenuManager.menuPresentMode = .menuSlideIn
-    self.sideMenuManager.menuFadeStatusBar = false
+    sideMenuManager.menuPresentMode = .menuSlideIn
+    sideMenuManager.menuFadeStatusBar = false
     let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "SideMenuNavigationController") as! UISideMenuNavigationController
-    self.sideMenuManager.menuLeftNavigationController = menuLeftNavigationController
+    sideMenuManager.menuLeftNavigationController = menuLeftNavigationController
     // self.sideMenuManager.menuAddPanGestureToPresent(toView: viewController.view)
-    self.sideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.view, forMenu: .left)
+    sideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: view, forMenu: .left)
 
     mapView.delegate = self
   }
