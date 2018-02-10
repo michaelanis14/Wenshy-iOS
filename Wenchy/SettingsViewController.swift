@@ -7,23 +7,9 @@
 //
 
 import UIKit
-import Firebase
-import FacebookLogin
-import GoogleSignIn
 
 class SettingsViewController: UIViewController {
   @IBAction func handleSaveButton() {
     dismiss(animated: true, completion: nil)
-  }
-
-  @IBAction func handleLogoutButton() {
-    try? Auth.auth().signOut()
-    LoginManager().logOut()
-    GIDSignIn.sharedInstance().signOut()
-
-    let vc = self.presentingViewController?.presentingViewController
-    dismiss(animated: true) {
-      vc?.viewDidAppear(true)
-    }
   }
 }

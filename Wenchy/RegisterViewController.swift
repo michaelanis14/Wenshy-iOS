@@ -112,6 +112,10 @@ class RegisterViewController: UIViewController {
   func completeRegisteration() {
     presentLoader(view)
 
+    let profile = Auth.auth().currentUser?.createProfileChangeRequest()
+    profile?.displayName = userData?["name"] as? String
+    profile?.commitChanges()
+
     Database.database().reference(withPath: "Users/Customers")
       .child(userUid!)
       .setValue(userData) { (error, ref) in
