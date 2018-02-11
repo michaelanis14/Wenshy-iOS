@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C1061FA3202FB75E00C3CC1A /* GeoFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1061FA1202FB75100C3CC1A /* GeoFire.framework */; };
+		C1061FA7202FD8A900C3CC1A /* CLPlacemark+CompactAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1061FA6202FD8A900C3CC1A /* CLPlacemark+CompactAddress.swift */; };
+		C1061FA9202FDFBC00C3CC1A /* DropOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1061FA8202FDFBC00C3CC1A /* DropOffViewController.swift */; };
 		C117BC0A20265F9C00ACC1E7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117BC0920265F9C00ACC1E7 /* RegisterViewController.swift */; };
 		C117BC0C2026690500ACC1E7 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117BC0B2026690500ACC1E7 /* ResetViewController.swift */; };
 		C117BC0E20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC0D20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework */; };
@@ -19,11 +21,11 @@
 		C117BC23202682F800ACC1E7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC22202682F700ACC1E7 /* FBSDKLoginKit.framework */; };
 		C122A78A1FEAAA2300EABFD8 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = C122A7891FEAAA2300EABFD8 /* Cartfile */; };
 		C12FEDA71FE9DC82002FC3EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12FEDA61FE9DC82002FC3EA /* AppDelegate.swift */; };
-		C12FEDA91FE9DC82002FC3EA /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12FEDA81FE9DC82002FC3EA /* RiderViewController.swift */; };
 		C12FEDAC1FE9DC82002FC3EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12FEDAA1FE9DC82002FC3EA /* Main.storyboard */; };
 		C12FEDAE1FE9DC82002FC3EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C12FEDAD1FE9DC82002FC3EA /* Assets.xcassets */; };
 		C12FEDB11FE9DC82002FC3EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12FEDAF1FE9DC82002FC3EA /* LaunchScreen.storyboard */; };
 		C1406D601FEFF65500D1DC7E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1406D5F1FEFF65500D1DC7E /* LoginViewController.swift */; };
+		C17A4BBD202FE3FB0048DE2B /* PickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12FEDA81FE9DC82002FC3EA /* PickUpViewController.swift */; };
 		C1864C29202C78CF00951538 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1864C28202C78CF00951538 /* MainNavigationController.swift */; };
 		C19217D31FEE7381006B1ED9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19217D21FEE7381006B1ED9 /* MapKit.framework */; };
 		C19217D51FEE9FA2006B1ED9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19217D41FEE9FA2006B1ED9 /* CoreLocation.framework */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		C1061FA1202FB75100C3CC1A /* GeoFire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GeoFire.framework; path = Carthage/Build/iOS/GeoFire.framework; sourceTree = "<group>"; };
+		C1061FA6202FD8A900C3CC1A /* CLPlacemark+CompactAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLPlacemark+CompactAddress.swift"; sourceTree = "<group>"; };
+		C1061FA8202FDFBC00C3CC1A /* DropOffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropOffViewController.swift; sourceTree = "<group>"; };
 		C117BC0920265F9C00ACC1E7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C117BC0B2026690500ACC1E7 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		C117BC0D20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
@@ -60,7 +64,7 @@
 		C122A7891FEAAA2300EABFD8 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		C12FEDA31FE9DC82002FC3EA /* Wenchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wenchy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12FEDA61FE9DC82002FC3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C12FEDA81FE9DC82002FC3EA /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
+		C12FEDA81FE9DC82002FC3EA /* PickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpViewController.swift; sourceTree = "<group>"; };
 		C12FEDAB1FE9DC82002FC3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C12FEDAD1FE9DC82002FC3EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C12FEDB01FE9DC82002FC3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,7 +129,8 @@
 		C1061FA4202FBADB00C3CC1A /* Rider */ = {
 			isa = PBXGroup;
 			children = (
-				C12FEDA81FE9DC82002FC3EA /* RiderViewController.swift */,
+				C12FEDA81FE9DC82002FC3EA /* PickUpViewController.swift */,
+				C1061FA8202FDFBC00C3CC1A /* DropOffViewController.swift */,
 			);
 			name = Rider;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				C19DB098202650D700EDA208 /* Utils.swift */,
+				C1061FA6202FD8A900C3CC1A /* CLPlacemark+CompactAddress.swift */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -404,14 +410,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C17A4BBD202FE3FB0048DE2B /* PickUpViewController.swift in Sources */,
 				C19DB099202650D700EDA208 /* Utils.swift in Sources */,
-				C12FEDA91FE9DC82002FC3EA /* RiderViewController.swift in Sources */,
 				C1406D601FEFF65500D1DC7E /* LoginViewController.swift in Sources */,
+				C1061FA7202FD8A900C3CC1A /* CLPlacemark+CompactAddress.swift in Sources */,
 				C117BC0A20265F9C00ACC1E7 /* RegisterViewController.swift in Sources */,
 				C1A3FEE1202E795400327775 /* SideMenuTableViewController.swift in Sources */,
 				C12FEDA71FE9DC82002FC3EA /* AppDelegate.swift in Sources */,
 				C1F14289202F251700163FFE /* DriverViewController.swift in Sources */,
 				C117BC0C2026690500ACC1E7 /* ResetViewController.swift in Sources */,
+				C1061FA9202FDFBC00C3CC1A /* DropOffViewController.swift in Sources */,
 				C1FEAC4B1FF54D0000564089 /* SettingsViewController.swift in Sources */,
 				C1864C29202C78CF00951538 /* MainNavigationController.swift in Sources */,
 			);

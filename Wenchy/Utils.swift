@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 
 var loader: UIActivityIndicatorView?
+var geocoder = CLGeocoder()
 
 func buildAlert(withTitle title: String, message: String, done: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
   let alert = UIAlertController(title: title,
@@ -47,4 +49,16 @@ func dismissLoader() {
 
     UIApplication.shared.endIgnoringInteractionEvents()
   }
+}
+
+func reverseGeocode(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completionHandler: ((String?) -> Void)?) {
+  geocoder.cancelGeocode()
+  let pickupLocation = CLLocation(latitude: latitude, longitude: longitude)
+  geocoder.reverseGeocodeLocation(pickupLocation, completionHandler: { (placemarks, error) in
+    if let _ = error { return }
+
+    if let placemarks = placemarks, placemarks.count > 0 {
+      completionHandler?(placemarks[0].compactAddress)
+    }
+  })
 }

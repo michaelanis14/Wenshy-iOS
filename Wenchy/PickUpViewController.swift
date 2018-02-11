@@ -1,5 +1,5 @@
 //
-//  RiderViewController.swift
+//  PickUpViewController.swift
 //  Wenchy
 //
 //  Created by Ramy Aboul Naga on 20/12/2017.
@@ -10,15 +10,21 @@ import UIKit
 import CoreLocation
 import MapKit
 import SideMenu
-import Firebase
 
-class RiderViewController: UIViewController {
+class PickUpViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var myLocationButton: UIButton!
+  @IBOutlet weak var pickUpAddressLabel: UILabel!
 
   var sideMenuManager = SideMenuManager.default
   var locationManager = CLLocationManager()
   var firstLocationUpdate = false
+  var selectedService: String?
+
+  let SERVICES = [
+    "Accident",
+    "Car Broke-down"
+  ]
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,6 +44,15 @@ class RiderViewController: UIViewController {
     mapView.delegate = self
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination as? DropOffViewController,
+      let requestData = sender as? [String: Any] {
+      vc.service = requestData["service"] as? String
+      vc.pickUpLocation = requestData["pickUpLocation"] as? CLLocation
+      vc.pickUpAddress = pickUpAddressLabel.text
+    }
+  }
+
   @IBAction func handleMenuButton() {
     present(self.sideMenuManager.menuLeftNavigationController!, animated: true)
   }
@@ -50,12 +65,25 @@ class RiderViewController: UIViewController {
     }
   }
 
-  @IBAction func handleRequestButton() {
-
+  @IBAction func handleChooseServiceButton() {
+    let alert = UIAlertController(title: "Choose Service", message: nil, preferredStyle: .actionSheet)
+    for service in SERVICES {
+      alert.addAction(UIAlertAction(title: service, style: .default, handler: { action in
+        if let service = action.title {
+          self.performSegue(withIdentifier: "request", sender: [
+            "service": service,
+            "pickUpLocation": CLLocation(latitude: self.mapView.centerCoordinate.latitude,
+                                         longitude: self.mapView.centerCoordinate.longitude)
+          ])
+        }
+      }))
+    }
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+    present(alert, animated: true)
   }
 }
 
-extension RiderViewController: CLLocationManagerDelegate {
+extension PickUpViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     if let coordinate = manager.location?.coordinate {
       if !firstLocationUpdate {
@@ -67,6 +95,12 @@ extension RiderViewController: CLLocationManagerDelegate {
         annotation.coordinate = center
         mapView.addAnnotation(annotation)
 
+        reverseGeocode(latitude: coordinate.latitude,
+                       longitude: coordinate.longitude,
+                       completionHandler: { address in
+                        self.pickUpAddressLabel.text = address
+        })
+
         myLocationButton.isHidden = true
 
         firstLocationUpdate = true
@@ -75,11 +109,18 @@ extension RiderViewController: CLLocationManagerDelegate {
   }
 }
 
-extension RiderViewController: MKMapViewDelegate {
+extension PickUpViewController: MKMapViewDelegate {
   func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
     for annotation in mapView.annotations {
       if let annotation = annotation as? MKPointAnnotation {
         annotation.coordinate = mapView.centerCoordinate
+
+        reverseGeocode(latitude: mapView.centerCoordinate.latitude,
+                       longitude: mapView.centerCoordinate.longitude,
+                       completionHandler: { address in
+                        self.pickUpAddressLabel.text = address
+        })
+
         myLocationButton.isHidden = false
       }
     }
