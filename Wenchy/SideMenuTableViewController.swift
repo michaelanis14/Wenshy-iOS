@@ -37,9 +37,10 @@ class SideMenuTableViewController: UITableViewController {
     LoginManager().logOut()
     GIDSignIn.sharedInstance().signOut()
 
-    let vc = self.presentingViewController
-    dismiss(animated: true) {
-      vc?.viewDidAppear(true)
+    if let vc = presentingViewController?.presentingViewController {
+      presentingViewController?.dismiss(animated: true, completion: {
+        vc.dismiss(animated: true)
+      })
     }
   }
 }

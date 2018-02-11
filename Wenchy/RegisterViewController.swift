@@ -72,16 +72,13 @@ class RegisterViewController: UIViewController {
           return
     }
 
-    let role = roleSwitch.isOn ? "Driver" : "Customer"
-
     userData = [
       "name": name,
       "email": email,
       "mobile": mobile,
       "carType": carType,
       "carModel": carModel,
-      "address": address,
-      "role": role
+      "address": address
     ]
 
     if let _ = userUid {
@@ -116,7 +113,8 @@ class RegisterViewController: UIViewController {
     profile?.displayName = userData?["name"] as? String
     profile?.commitChanges()
 
-    Database.database().reference(withPath: "Users/Customers")
+    let refPath = roleSwitch.isOn ? "Drivers" : "Customers"
+    Database.database().reference(withPath: "Users/\(refPath)")
       .child(userUid!)
       .setValue(userData) { (error, ref) in
         dismissLoader()

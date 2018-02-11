@@ -12,7 +12,7 @@
 2. Install app dependencies using Carthage.
 
     ```
-      $ carthage bootstrap
+      $ carthage bootstrap --platform iOS
     ```
 
 3. Download `GoogleService-Info.plist` corresponding to your project from [Firebase Console](https://console.firebase.google.com) and put it under the `Wenchy` directory (alongside `Info.plist`).

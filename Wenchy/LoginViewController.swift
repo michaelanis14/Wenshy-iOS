@@ -109,18 +109,28 @@ class LoginViewController: UIViewController {
       Database.database().reference(withPath: "Users/Customers")
         .child(result.user.uid)
         .observeSingleEvent(of: .value) { snapshot in
-          dismissLoader()
+          guard snapshot.exists() else {
+            Database.database().reference(withPath: "Users/Drivers")
+              .child(result.user.uid)
+              .observeSingleEvent(of: .value) { snapshot in
+                dismissLoader()
 
-          guard let value = snapshot.value as? [String: Any], let _ = value["role"] else {
-            if let profile = result.additionalUserInfo?.profile {
-              let userData: [String : Any] = [
-                "uid": result.user.uid,
-                "name": profile["name"] as! String,
-                "email": profile["email"] as! String
-              ]
-              
-              self.performSegue(withIdentifier: "register", sender: userData)
+                guard snapshot.exists() else {
+                  if let profile = result.additionalUserInfo?.profile {
+                    let userData: [String : Any] = [
+                      "uid": result.user.uid,
+                      "name": profile["name"] as! String,
+                      "email": profile["email"] as! String
+                    ]
+
+                    self.performSegue(withIdentifier: "register", sender: userData)
+                  }
+                  return
+                }
+
+                self.dismiss(animated: true)
             }
+
             return
           }
 

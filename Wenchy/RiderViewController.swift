@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RiderViewController.swift
 //  Wenchy
 //
 //  Created by Ramy Aboul Naga on 20/12/2017.
@@ -12,7 +12,7 @@ import MapKit
 import SideMenu
 import Firebase
 
-class MainViewController: UIViewController {
+class RiderViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var myLocationButton: UIButton!
 
@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
   }
 }
 
-extension MainViewController: CLLocationManagerDelegate {
+extension RiderViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     if let coordinate = manager.location?.coordinate {
       if !firstLocationUpdate {
@@ -75,7 +75,7 @@ extension MainViewController: CLLocationManagerDelegate {
   }
 }
 
-extension MainViewController: MKMapViewDelegate {
+extension RiderViewController: MKMapViewDelegate {
   func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
     for annotation in mapView.annotations {
       if let annotation = annotation as? MKPointAnnotation {
@@ -83,12 +83,5 @@ extension MainViewController: MKMapViewDelegate {
         myLocationButton.isHidden = false
       }
     }
-  }
-}
-
-extension CLLocationCoordinate2D {
-  func isEqual(_ coordinate: CLLocationCoordinate2D) -> Bool {
-    return (fabs(self.latitude - coordinate.latitude) < .ulpOfOne) &&
-      (fabs(self.longitude - coordinate.longitude) < .ulpOfOne)
   }
 }

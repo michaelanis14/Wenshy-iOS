@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1061FA3202FB75E00C3CC1A /* GeoFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1061FA1202FB75100C3CC1A /* GeoFire.framework */; };
 		C117BC0A20265F9C00ACC1E7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117BC0920265F9C00ACC1E7 /* RegisterViewController.swift */; };
 		C117BC0C2026690500ACC1E7 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C117BC0B2026690500ACC1E7 /* ResetViewController.swift */; };
 		C117BC0E20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC0D20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework */; };
@@ -18,17 +19,18 @@
 		C117BC23202682F800ACC1E7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C117BC22202682F700ACC1E7 /* FBSDKLoginKit.framework */; };
 		C122A78A1FEAAA2300EABFD8 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = C122A7891FEAAA2300EABFD8 /* Cartfile */; };
 		C12FEDA71FE9DC82002FC3EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12FEDA61FE9DC82002FC3EA /* AppDelegate.swift */; };
-		C12FEDA91FE9DC82002FC3EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12FEDA81FE9DC82002FC3EA /* MainViewController.swift */; };
+		C12FEDA91FE9DC82002FC3EA /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12FEDA81FE9DC82002FC3EA /* RiderViewController.swift */; };
 		C12FEDAC1FE9DC82002FC3EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12FEDAA1FE9DC82002FC3EA /* Main.storyboard */; };
 		C12FEDAE1FE9DC82002FC3EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C12FEDAD1FE9DC82002FC3EA /* Assets.xcassets */; };
 		C12FEDB11FE9DC82002FC3EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C12FEDAF1FE9DC82002FC3EA /* LaunchScreen.storyboard */; };
 		C1406D601FEFF65500D1DC7E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1406D5F1FEFF65500D1DC7E /* LoginViewController.swift */; };
-		C1680AE2202CF872001FA27D /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1680AE1202CF872001FA27D /* GoogleSignIn.framework */; };
-		C1864C29202C78CF00951538 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1864C28202C78CF00951538 /* LaunchViewController.swift */; };
+		C1864C29202C78CF00951538 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1864C28202C78CF00951538 /* MainNavigationController.swift */; };
 		C19217D31FEE7381006B1ED9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19217D21FEE7381006B1ED9 /* MapKit.framework */; };
 		C19217D51FEE9FA2006B1ED9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19217D41FEE9FA2006B1ED9 /* CoreLocation.framework */; };
 		C19DB099202650D700EDA208 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB098202650D700EDA208 /* Utils.swift */; };
 		C1A3FEE1202E795400327775 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A3FEE0202E795400327775 /* SideMenuTableViewController.swift */; };
+		C1F14289202F251700163FFE /* DriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F14288202F251700163FFE /* DriverViewController.swift */; };
+		C1F1428F202F483400163FFE /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F1428E202F483400163FFE /* GoogleSignIn.framework */; };
 		C1FC54152025C40300B910CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1FC54142025C40300B910CB /* GoogleService-Info.plist */; };
 		C1FC54172025C53500B910CB /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC54162025C53500B910CB /* FirebaseAnalytics.framework */; };
 		C1FC54222025D2A100B910CB /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1FC54182025D29E00B910CB /* FirebaseInstanceID.framework */; };
@@ -45,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C1061FA1202FB75100C3CC1A /* GeoFire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GeoFire.framework; path = Carthage/Build/iOS/GeoFire.framework; sourceTree = "<group>"; };
 		C117BC0920265F9C00ACC1E7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C117BC0B2026690500ACC1E7 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		C117BC0D20266B0700ACC1E7 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
@@ -57,19 +60,20 @@
 		C122A7891FEAAA2300EABFD8 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		C12FEDA31FE9DC82002FC3EA /* Wenchy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wenchy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12FEDA61FE9DC82002FC3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C12FEDA81FE9DC82002FC3EA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C12FEDA81FE9DC82002FC3EA /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
 		C12FEDAB1FE9DC82002FC3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C12FEDAD1FE9DC82002FC3EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C12FEDB01FE9DC82002FC3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C12FEDB21FE9DC82002FC3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1406D5F1FEFF65500D1DC7E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C1680AE1202CF872001FA27D /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Carthage/Build/iOS/GoogleSignIn.framework; sourceTree = "<group>"; };
-		C1864C28202C78CF00951538 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		C1864C28202C78CF00951538 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		C19217D21FEE7381006B1ED9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C19217D41FEE9FA2006B1ED9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C19DB098202650D700EDA208 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C1A3FEE0202E795400327775 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		C1E2B5C9202D19C500C0D4A7 /* Wenchy.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Wenchy.xcconfig; sourceTree = SOURCE_ROOT; };
+		C1F14288202F251700163FFE /* DriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverViewController.swift; sourceTree = "<group>"; };
+		C1F1428E202F483400163FFE /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Carthage/Build/iOS/GoogleSignIn.framework; sourceTree = "<group>"; };
 		C1FC54142025C40300B910CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1FC54162025C53500B910CB /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		C1FC54182025D29E00B910CB /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Carthage/Build/iOS/FirebaseInstanceID.framework; sourceTree = "<group>"; };
@@ -103,20 +107,37 @@
 				C1FC542B2025D2A100B910CB /* GoogleToolboxForMac.framework in Frameworks */,
 				C19217D31FEE7381006B1ED9 /* MapKit.framework in Frameworks */,
 				C1FC54262025D2A100B910CB /* FirebaseAuth.framework in Frameworks */,
+				C1F1428F202F483400163FFE /* GoogleSignIn.framework in Frameworks */,
 				C1FC542A2025D2A100B910CB /* GTMSessionFetcher.framework in Frameworks */,
 				C1FC54172025C53500B910CB /* FirebaseAnalytics.framework in Frameworks */,
 				C117BC212026807D00ACC1E7 /* FacebookLogin.framework in Frameworks */,
 				C117BC1C2026804D00ACC1E7 /* FacebookCore.framework in Frameworks */,
 				C117BC1D2026804D00ACC1E7 /* FBSDKCoreKit.framework in Frameworks */,
 				C117BC1E2026804D00ACC1E7 /* Bolts.framework in Frameworks */,
+				C1061FA3202FB75E00C3CC1A /* GeoFire.framework in Frameworks */,
 				C117BC23202682F800ACC1E7 /* FBSDKLoginKit.framework in Frameworks */,
-				C1680AE2202CF872001FA27D /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1061FA4202FBADB00C3CC1A /* Rider */ = {
+			isa = PBXGroup;
+			children = (
+				C12FEDA81FE9DC82002FC3EA /* RiderViewController.swift */,
+			);
+			name = Rider;
+			sourceTree = "<group>";
+		};
+		C1061FA5202FBAF000C3CC1A /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				C1F14288202F251700163FFE /* DriverViewController.swift */,
+			);
+			name = Driver;
+			sourceTree = "<group>";
+		};
 		C117BC1F2026805100ACC1E7 /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +158,7 @@
 				C1FC542C2025D30E00B910CB /* Firebase */,
 				C117BC1F2026805100ACC1E7 /* Facebook */,
 				C1680AE0202CF845001FA27D /* Google */,
+				C1F1428A202F456600163FFE /* GeoFire */,
 				C19217D41FEE9FA2006B1ED9 /* CoreLocation.framework */,
 				C19217D21FEE7381006B1ED9 /* MapKit.framework */,
 			);
@@ -167,10 +189,10 @@
 			children = (
 				C12FEDB91FE9DD1C002FC3EA /* --- */,
 				C12FEDAA1FE9DC82002FC3EA /* Main.storyboard */,
-				C12FEDA61FE9DC82002FC3EA /* AppDelegate.swift */,
-				C1864C28202C78CF00951538 /* LaunchViewController.swift */,
-				C12FEDA81FE9DC82002FC3EA /* MainViewController.swift */,
+				C1864C28202C78CF00951538 /* MainNavigationController.swift */,
 				C1406D5E1FEFF5C900D1DC7E /* Auth */,
+				C1061FA4202FBADB00C3CC1A /* Rider */,
+				C1061FA5202FBAF000C3CC1A /* Driver */,
 				C1FEAC491FF54CE000564089 /* Settings */,
 				C19DB097202650C200EDA208 /* Shared */,
 				C122A7891FEAAA2300EABFD8 /* Cartfile */,
@@ -183,6 +205,7 @@
 			children = (
 				C12FEDAD1FE9DC82002FC3EA /* Assets.xcassets */,
 				C12FEDAF1FE9DC82002FC3EA /* LaunchScreen.storyboard */,
+				C12FEDA61FE9DC82002FC3EA /* AppDelegate.swift */,
 				C12FEDB21FE9DC82002FC3EA /* Info.plist */,
 				C1FC54142025C40300B910CB /* GoogleService-Info.plist */,
 				C1E2B5C9202D19C500C0D4A7 /* Wenchy.xcconfig */,
@@ -203,7 +226,7 @@
 		C1680AE0202CF845001FA27D /* Google */ = {
 			isa = PBXGroup;
 			children = (
-				C1680AE1202CF872001FA27D /* GoogleSignIn.framework */,
+				C1F1428E202F483400163FFE /* GoogleSignIn.framework */,
 			);
 			name = Google;
 			sourceTree = "<group>";
@@ -214,6 +237,14 @@
 				C19DB098202650D700EDA208 /* Utils.swift */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		C1F1428A202F456600163FFE /* GeoFire */ = {
+			isa = PBXGroup;
+			children = (
+				C1061FA1202FB75100C3CC1A /* GeoFire.framework */,
+			);
+			name = GeoFire;
 			sourceTree = "<group>";
 		};
 		C1FC542C2025D30E00B910CB /* Firebase */ = {
@@ -349,6 +380,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/FBSDKCoreKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FBSDKLoginKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/GoogleSignIn.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/GeoFire.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
@@ -359,6 +391,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FBSDKCoreKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FBSDKLoginKit.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GoogleSignIn.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/GeoFire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -372,14 +405,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C19DB099202650D700EDA208 /* Utils.swift in Sources */,
-				C12FEDA91FE9DC82002FC3EA /* MainViewController.swift in Sources */,
+				C12FEDA91FE9DC82002FC3EA /* RiderViewController.swift in Sources */,
 				C1406D601FEFF65500D1DC7E /* LoginViewController.swift in Sources */,
 				C117BC0A20265F9C00ACC1E7 /* RegisterViewController.swift in Sources */,
 				C1A3FEE1202E795400327775 /* SideMenuTableViewController.swift in Sources */,
 				C12FEDA71FE9DC82002FC3EA /* AppDelegate.swift in Sources */,
+				C1F14289202F251700163FFE /* DriverViewController.swift in Sources */,
 				C117BC0C2026690500ACC1E7 /* ResetViewController.swift in Sources */,
 				C1FEAC4B1FF54D0000564089 /* SettingsViewController.swift in Sources */,
-				C1864C29202C78CF00951538 /* LaunchViewController.swift in Sources */,
+				C1864C29202C78CF00951538 /* MainNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +560,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Wenchy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -547,6 +582,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Wenchy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
