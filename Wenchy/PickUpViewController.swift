@@ -48,7 +48,8 @@ class PickUpViewController: UIViewController {
     if let vc = segue.destination as? DropOffViewController,
       let requestData = sender as? [String: Any] {
       vc.service = requestData["service"] as? String
-      vc.pickUpLocation = requestData["pickUpLocation"] as? CLLocation
+      vc.pickUpLocation = CLLocation(latitude: mapView.centerCoordinate.latitude,
+                                     longitude: mapView.centerCoordinate.longitude)
       vc.pickUpAddress = pickUpAddressLabel.text
     }
   }
@@ -71,9 +72,7 @@ class PickUpViewController: UIViewController {
       alert.addAction(UIAlertAction(title: service, style: .default, handler: { action in
         if let service = action.title {
           self.performSegue(withIdentifier: "request", sender: [
-            "service": service,
-            "pickUpLocation": CLLocation(latitude: self.mapView.centerCoordinate.latitude,
-                                         longitude: self.mapView.centerCoordinate.longitude)
+            "service": service
           ])
         }
       }))

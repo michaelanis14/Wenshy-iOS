@@ -19,10 +19,10 @@ class DropOffViewController: UIViewController {
   @IBOutlet weak var serviceLabel: UILabel!
   @IBOutlet weak var carTypeLabel: UILabel!
   @IBOutlet weak var carModelLabel: UILabel!
-  
-  var service: String?
+
   var pickUpLocation: CLLocation?
   var pickUpAddress: String?
+  var service: String?
 
   var locationManager = CLLocationManager()
   var firstLocationUpdate = false
@@ -54,16 +54,25 @@ class DropOffViewController: UIViewController {
     }
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination as? ConfirmViewController {
+      vc.pickUpLocation = pickUpLocation
+      vc.pickUpAddress = pickUpAddressLabel.text
+      vc.dropOffLocation = CLLocation(latitude: mapView.centerCoordinate.latitude,
+                                     longitude: mapView.centerCoordinate.longitude)
+      vc.dropOffAddress = dropOffAddressLabel.text
+      vc.service = service
+      vc.carType = carTypeLabel.text
+      vc.carModel = carModelLabel.text
+    }
+  }
+
   @IBAction func handleMyLocationButton() {
     if let location = mapView.userLocation.location {
       firstLocationUpdate = false
       locationManager(locationManager, didUpdateLocations: [location])
       myLocationButton.isHidden = true
     }
-  }
-
-  @IBAction func handleConfirmDropOffButton() {
-    
   }
 }
 

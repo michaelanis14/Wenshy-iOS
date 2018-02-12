@@ -27,6 +27,8 @@
 		C1406D601FEFF65500D1DC7E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1406D5F1FEFF65500D1DC7E /* LoginViewController.swift */; };
 		C17A4BBD202FE3FB0048DE2B /* PickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12FEDA81FE9DC82002FC3EA /* PickUpViewController.swift */; };
 		C1864C29202C78CF00951538 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1864C28202C78CF00951538 /* MainNavigationController.swift */; };
+		C18F6C23203140CF007E3261 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F6C22203140CF007E3261 /* ConfirmViewController.swift */; };
+		C18F6C2520314A46007E3261 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18F6C2420314A46007E3261 /* Helpers.swift */; };
 		C19217D31FEE7381006B1ED9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19217D21FEE7381006B1ED9 /* MapKit.framework */; };
 		C19217D51FEE9FA2006B1ED9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19217D41FEE9FA2006B1ED9 /* CoreLocation.framework */; };
 		C19DB099202650D700EDA208 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19DB098202650D700EDA208 /* Utils.swift */; };
@@ -71,6 +73,8 @@
 		C12FEDB21FE9DC82002FC3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1406D5F1FEFF65500D1DC7E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1864C28202C78CF00951538 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		C18F6C22203140CF007E3261 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		C18F6C2420314A46007E3261 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C19217D21FEE7381006B1ED9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C19217D41FEE9FA2006B1ED9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C19DB098202650D700EDA208 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			children = (
 				C12FEDA81FE9DC82002FC3EA /* PickUpViewController.swift */,
 				C1061FA8202FDFBC00C3CC1A /* DropOffViewController.swift */,
+				C18F6C22203140CF007E3261 /* ConfirmViewController.swift */,
 			);
 			name = Rider;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				C19DB098202650D700EDA208 /* Utils.swift */,
+				C18F6C2420314A46007E3261 /* Helpers.swift */,
 				C1061FA6202FD8A900C3CC1A /* CLPlacemark+CompactAddress.swift */,
 			);
 			name = Shared;
@@ -411,6 +417,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C17A4BBD202FE3FB0048DE2B /* PickUpViewController.swift in Sources */,
+				C18F6C2520314A46007E3261 /* Helpers.swift in Sources */,
+				C18F6C23203140CF007E3261 /* ConfirmViewController.swift in Sources */,
 				C19DB099202650D700EDA208 /* Utils.swift in Sources */,
 				C1406D601FEFF65500D1DC7E /* LoginViewController.swift in Sources */,
 				C1061FA7202FD8A900C3CC1A /* CLPlacemark+CompactAddress.swift in Sources */,
