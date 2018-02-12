@@ -33,7 +33,10 @@ class MainNavigationController: UINavigationController {
           Database.database().reference(withPath: "Users/Drivers")
             .child(user.uid)
             .observeSingleEvent(of: .value) { (snapshot) in
-              guard snapshot.exists() else { return }
+              guard snapshot.exists() else {
+                self.performSegue(withIdentifier: "auth", sender: nil)
+                return
+              }
 
               self.performSegue(withIdentifier: "driver", sender: nil)
           }
@@ -42,5 +45,7 @@ class MainNavigationController: UINavigationController {
 
         self.performSegue(withIdentifier: "customer", sender: nil)
     }
+
+    dismissLoader()
   }
 }

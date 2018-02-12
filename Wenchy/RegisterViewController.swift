@@ -19,12 +19,12 @@ class RegisterViewController: UIViewController {
   @IBOutlet weak var addressTextField: UITextField!
   @IBOutlet weak var roleSwitch: UISwitch!
 
-  @IBOutlet weak var nameTextFieldTopSpacing: NSLayoutConstraint!
   @IBOutlet weak var nameTextFieldHeight: NSLayoutConstraint!
-  @IBOutlet weak var emailTextFieldTopSpacing: NSLayoutConstraint!
+  @IBOutlet weak var nameTextFieldBottomSpacing: NSLayoutConstraint!
   @IBOutlet weak var emailTextFieldHeight: NSLayoutConstraint!
-  @IBOutlet weak var passwordTextFieldTopSpacing: NSLayoutConstraint!
+  @IBOutlet weak var emailTextFieldBottomSpacing: NSLayoutConstraint!
   @IBOutlet weak var passwordTextFieldHeight: NSLayoutConstraint!
+  @IBOutlet weak var passwordTextFieldBottomSpacing: NSLayoutConstraint!
 
   var userData: [String: Any]?
   var userUid: String?
@@ -35,22 +35,25 @@ class RegisterViewController: UIViewController {
     if let userData = userData {
       if let userUid = userData["uid"] as? String {
         self.userUid = userUid
-        passwordTextFieldTopSpacing.constant = 0
         passwordTextFieldHeight.constant = 0
+        passwordTextFieldBottomSpacing.constant = 0
+        passwordTextField.isHidden = true
         passwordTextField.layoutIfNeeded()
       }
 
       if let name = userData["name"] as? String {
         nameTextField.text = name
-        nameTextFieldTopSpacing.constant = 0
         nameTextFieldHeight.constant = 0
+        nameTextFieldBottomSpacing.constant = 0
+        nameTextField.isHidden = true
         nameTextField.layoutIfNeeded()
       }
 
       if let email = userData["email"] as? String {
         emailTextField.text = email
-        emailTextFieldTopSpacing.constant = 0
         emailTextFieldHeight.constant = 0
+        emailTextFieldBottomSpacing.constant = 0
+        emailTextField.isHidden = true
         emailTextField.layoutIfNeeded()
       }
     }

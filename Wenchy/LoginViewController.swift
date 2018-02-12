@@ -16,6 +16,10 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var facebookLoginButton: UIButton!
+  @IBOutlet weak var googleButton: UIButton!
+  @IBOutlet weak var googleButtonTopSpacing: NSLayoutConstraint!
+  @IBOutlet weak var googleButtonHeight: NSLayoutConstraint!
+  @IBOutlet weak var googleImageView: UIImageView!
 
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -25,6 +29,18 @@ class LoginViewController: UIViewController {
   override func viewWillDisappear(_ animated: Bool) {
     self.navigationController?.setNavigationBarHidden(false, animated: animated)
     super.viewWillDisappear(animated)
+  }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    guard #available(iOS 9.0, *) else {
+      googleButton.isHidden = true
+      googleButtonTopSpacing.constant = 0
+      googleButtonHeight.constant = 0
+      googleImageView.isHidden = true
+      return
+    }
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
