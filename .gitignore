@@ -1,6 +1,7 @@
 /Build
-/Carthage
 /Index
+/Pods
 xcuserdata
 GoogleService-Info.plist
-Wenchy.xcconfig
+Wenshi.debug.xcconfig
+Wenshi.release.xcconfig

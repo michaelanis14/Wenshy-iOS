@@ -1,20 +1,11 @@
-# Wenchy iOS
+# Wenshi iOS
 
 ## Getting Started
 
-1. Install [Carthage](https://github.com/Carthage/Carthage) (Depends on [Homebrew](https://brew.sh)).
+1. Download the [CocoaPods](https://cocoapods.org/app) companion app.
 
-    ```
-      $ brew update
-      $ brew install carthage
-    ```
+2. Install app dependencies using the CocoaPods app.
 
-2. Install app dependencies using Carthage.
+3. Download `GoogleService-Info.plist` corresponding to your project from [Firebase Console](https://console.firebase.google.com) and put it under the `Wenshi` directory (alongside `Info.plist`).
 
-    ```
-      $ carthage bootstrap --platform iOS
-    ```
-
-3. Download `GoogleService-Info.plist` corresponding to your project from [Firebase Console](https://console.firebase.google.com) and put it under the `Wenchy` directory (alongside `Info.plist`).
-
-4. Make a copy of `_Wenchy.xcconfig` into `Wenchy.xcconfig`, and update its contents accordingly.
+4. Make two copies of `_Wenshi.xcconfig` into `Wenshi.debug.xcconfig` and `Wenshi.release.xcconfig`, and update their contents accordingly.
