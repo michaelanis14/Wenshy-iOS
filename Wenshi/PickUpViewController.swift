@@ -97,7 +97,7 @@ extension PickUpViewController: CLLocationManagerDelegate {
         reverseGeocode(latitude: coordinate.latitude,
                        longitude: coordinate.longitude,
                        completionHandler: { address in
-                        self.pickUpAddressLabel.text = address
+          self.pickUpAddressLabel.text = address
         })
 
         myLocationButton.isHidden = true
@@ -117,7 +117,7 @@ extension PickUpViewController: MKMapViewDelegate {
         reverseGeocode(latitude: mapView.centerCoordinate.latitude,
                        longitude: mapView.centerCoordinate.longitude,
                        completionHandler: { address in
-                        self.pickUpAddressLabel.text = address
+          self.pickUpAddressLabel.text = address
         })
 
         myLocationButton.isHidden = false

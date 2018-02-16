@@ -6,7 +6,7 @@
 //  Copyright © 2018 RaMin0. All rights reserved.
 //
 
-#include "#include "Pods/Target Support Files/Pods-Wenshi/Pods-Wenshi.{debug,release}.xcconfig""
+#include "Pods/Target Support Files/Pods-Wenshi/Pods-Wenshi.{debug,release}.xcconfig"
 
-FACEBOOK_APP_ID=
-GOOGLE_REVERSED_CLIENT_ID=
+FACEBOOK_APP_ID = <REPLACE_ME>
+GOOGLE_REVERSED_CLIENT_ID = <REPLACE_ME>

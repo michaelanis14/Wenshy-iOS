@@ -92,7 +92,7 @@ extension DropOffViewController: CLLocationManagerDelegate {
         reverseGeocode(latitude: coordinate.latitude,
                        longitude: coordinate.longitude,
                        completionHandler: { address in
-                        self.dropOffAddressLabel.text = address
+          self.dropOffAddressLabel.text = address
         })
 
         myLocationButton.isHidden = true
@@ -112,7 +112,7 @@ extension DropOffViewController: MKMapViewDelegate {
         reverseGeocode(latitude: mapView.centerCoordinate.latitude,
                        longitude: mapView.centerCoordinate.longitude,
                        completionHandler: { address in
-                        self.dropOffAddressLabel.text = address
+          self.dropOffAddressLabel.text = address
         })
 
         myLocationButton.isHidden = false

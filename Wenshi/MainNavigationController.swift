@@ -38,14 +38,35 @@ class MainNavigationController: UINavigationController {
                 return
               }
 
-              self.performSegue(withIdentifier: "driver", sender: nil)
+              self.completeMain(withUid: user.uid, snapshot: snapshot, as: "Driver")
           }
+
           return
         }
 
-        self.performSegue(withIdentifier: "customer", sender: nil)
+        self.completeMain(withUid: user.uid, snapshot: snapshot, as: "Customer")
     }
 
     dismissLoader()
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination as? CodeViewController,
+      let userData = sender as? [String: Any] {
+      vc.userUid = userData["uid"] as? String
+      vc.mobile = userData["mobile"] as? String
+    }
+  }
+
+  func completeMain(withUid uid: String, snapshot: DataSnapshot, as role: String) {
+    if let userData = snapshot.value as? [String: Any] {
+      guard let verified = userData["verified"] as? Bool, verified else {
+        self.performSegue(withIdentifier: "auth", sender: nil)
+
+        return
+      }
+
+      self.performSegue(withIdentifier: role.lowercased(), sender: nil)
+    }
   }
 }

@@ -27,12 +27,15 @@
 		C19E60EF2034FD97002C0E0C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60EC2034FD97002C0E0C /* Helpers.swift */; };
 		C19E60F02034FD97002C0E0C /* CLPlacemark+CompactAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60ED2034FD97002C0E0C /* CLPlacemark+CompactAddress.swift */; };
 		C1E6F78620356B0200B870EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E6F78520356B0200B870EA /* MapKit.framework */; };
+		C1E6F78A20362B3000B870EA /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E6F78920362B3000B870EA /* CodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F0A86D82575CB7AEA065995 /* Pods-Wenshi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wenshi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wenshi/Pods-Wenshi.debug.xcconfig"; sourceTree = "<group>"; };
 		0FA828DE4A20743556E623B0 /* Pods_Wenshi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wenshi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B39E09B7429943BE3AAC31 /* Pods-Wenshi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wenshi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wenshi/Pods-Wenshi.release.xcconfig"; sourceTree = "<group>"; };
+		C13152332036AE6300A8460E /* Wenshi.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Wenshi.release.xcconfig; sourceTree = SOURCE_ROOT; };
+		C13152342036AE9500A8460E /* Wenshi.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Wenshi.debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		C19E608F2034F523002C0E0C /* Wenshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wenshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19E60922034F523002C0E0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C19E60942034F523002C0E0C /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -41,7 +44,6 @@
 		C19E609C2034F523002C0E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C19E609E2034F523002C0E0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C19E60A62034F7DF002C0E0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C19E60A82034F7F9002C0E0C /* Wenshi.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Wenshi.debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		C19E60D92034FD71002C0E0C /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		C19E60DA2034FD71002C0E0C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C19E60DB2034FD71002C0E0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 		C19E60EC2034FD97002C0E0C /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C19E60ED2034FD97002C0E0C /* CLPlacemark+CompactAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLPlacemark+CompactAddress.swift"; sourceTree = "<group>"; };
 		C1E6F78520356B0200B870EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		C1E6F787203603BE00B870EA /* Wenshi.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Wenshi.release.xcconfig; sourceTree = SOURCE_ROOT; };
+		C1E6F78920362B3000B870EA /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +123,8 @@
 				C19E60922034F523002C0E0C /* AppDelegate.swift */,
 				C19E609E2034F523002C0E0C /* Info.plist */,
 				C19E60A62034F7DF002C0E0C /* GoogleService-Info.plist */,
-				C19E60A82034F7F9002C0E0C /* Wenshi.debug.xcconfig */,
-				C1E6F787203603BE00B870EA /* Wenshi.release.xcconfig */,
+				C13152342036AE9500A8460E /* Wenshi.debug.xcconfig */,
+				C13152332036AE6300A8460E /* Wenshi.release.xcconfig */,
 			);
 			name = "---";
 			sourceTree = "<group>";
@@ -142,6 +144,7 @@
 			children = (
 				C19E60DB2034FD71002C0E0C /* LoginViewController.swift */,
 				C19E60DA2034FD71002C0E0C /* RegisterViewController.swift */,
+				C1E6F78920362B3000B870EA /* CodeViewController.swift */,
 				C19E60D92034FD71002C0E0C /* ResetViewController.swift */,
 			);
 			name = Auth;
@@ -295,6 +298,7 @@
 				"${BUILT_PRODUCTS_DIR}/GeoFire/GeoFire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -311,6 +315,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeoFire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -348,6 +353,7 @@
 				C19E60E62034FD85002C0E0C /* DriverViewController.swift in Sources */,
 				C19E60952034F523002C0E0C /* MainNavigationController.swift in Sources */,
 				C19E60E32034FD7E002C0E0C /* PickUpViewController.swift in Sources */,
+				C1E6F78A20362B3000B870EA /* CodeViewController.swift in Sources */,
 				C19E60E92034FD8E002C0E0C /* SettingsViewController.swift in Sources */,
 				C19E60F02034FD97002C0E0C /* CLPlacemark+CompactAddress.swift in Sources */,
 				C19E60DC2034FD71002C0E0C /* ResetViewController.swift in Sources */,
@@ -493,7 +499,7 @@
 		};
 		C19E60A22034F523002C0E0C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C19E60A82034F7F9002C0E0C /* Wenshi.debug.xcconfig */;
+			baseConfigurationReference = C13152342036AE9500A8460E /* Wenshi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -510,7 +516,7 @@
 		};
 		C19E60A32034F523002C0E0C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1E6F787203603BE00B870EA /* Wenshi.release.xcconfig */;
+			baseConfigurationReference = C13152332036AE6300A8460E /* Wenshi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

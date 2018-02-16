@@ -45,9 +45,18 @@ class LoginViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? RegisterViewController,
-      let userData = sender as? [String: Any] {
-      vc.userData = userData
+    switch segue.destination {
+    case let vc as RegisterViewController:
+      if let userData = sender as? [String: Any] {
+        vc.userData = userData
+      }
+    case let vc as CodeViewController:
+      if let userData = sender as? [String: Any] {
+        vc.userUid = userData["uid"] as? String
+        vc.mobile = userData["mobile"] as? String
+      }
+    default:
+      return
     }
   }
 
@@ -127,41 +136,41 @@ class LoginViewController: UIViewController {
 
       guard let result = result else { return }
 
-      if credential.provider == EmailAuthProviderID {
-        self.dismiss(animated: true, completion: nil)
-        return
-      }
-
       presentLoader(self.view)
       Database.database().reference(withPath: "Users/Customers")
         .child(result.user.uid)
         .observeSingleEvent(of: .value) { snapshot in
+          dismissLoader()
+
           guard snapshot.exists() else {
+            presentLoader(self.view)
             Database.database().reference(withPath: "Users/Drivers")
               .child(result.user.uid)
               .observeSingleEvent(of: .value) { snapshot in
                 dismissLoader()
 
                 guard snapshot.exists() else {
-                  if let profile = result.additionalUserInfo?.profile {
-                    let userData: [String : Any] = [
-                      "uid": result.user.uid,
-                      "name": profile["name"] as! String,
-                      "email": profile["email"] as! String
-                    ]
+                  var userData: [String : Any] = [
+                    "uid": result.user.uid
+                  ]
 
-                    self.performSegue(withIdentifier: "register", sender: userData)
+                  if let profile = result.additionalUserInfo?.profile {
+                    userData["name"] = profile["name"] as! String
+                    userData["email"] = profile["email"] as! String
                   }
+
+                  self.performSegue(withIdentifier: "register", sender: userData)
+
                   return
                 }
 
-                self.dismiss(animated: true)
+                self.completeLogin(withUid: result.user.uid, snapshot: snapshot)
             }
 
             return
           }
 
-          self.dismiss(animated: true)
+          self.completeLogin(withUid: result.user.uid, snapshot: snapshot)
       }
     }
   }
@@ -180,6 +189,20 @@ class LoginViewController: UIViewController {
     let credential = GoogleAuthProvider.credential(withIDToken: accessToken.idToken,
                                                    accessToken: accessToken.accessToken)
     login(withCredential: credential)
+  }
+
+  func completeLogin(withUid uid: String, snapshot: DataSnapshot) {
+    if let userData = snapshot.value as? [String: Any] {
+      guard let verified = userData["verified"] as? Bool, verified else {
+        self.performSegue(withIdentifier: "code", sender: [
+          "uid": uid,
+          "mobile": userData["mobile"] as! String
+          ])
+        return
+      }
+    }
+
+    self.dismiss(animated: true)
   }
 }
 

@@ -71,6 +71,12 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - PhoneNumberKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.1.0)
+    - PhoneNumberKit/UIKit (= 2.1.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.1.0)
+  - PhoneNumberKit/UIKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore
   - SideMenu (3.1.5)
 
 DEPENDENCIES:
@@ -82,6 +88,7 @@ DEPENDENCIES:
   - GeoFire
   - GoogleSignIn
   - IQKeyboardManagerSwift
+  - PhoneNumberKit
   - SideMenu
 
 SPEC CHECKSUMS:
@@ -104,8 +111,9 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
 
-PODFILE CHECKSUM: d1438b7254061d7e872d70991f4ab6af6fc346f3
+PODFILE CHECKSUM: 43cc1aa9f56de7f166d0873bcbc55ef73f27741d
 
 COCOAPODS: 1.4.0

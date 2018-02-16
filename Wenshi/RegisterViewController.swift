@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import PhoneNumberKit
 
 class RegisterViewController: UIViewController {
   @IBOutlet weak var nameTextField: UITextField!
@@ -59,8 +60,16 @@ class RegisterViewController: UIViewController {
       }
     }
   }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination as? CodeViewController,
+      let userData = sender as? [String: Any] {
+      vc.userUid = userData["uid"] as? String
+      vc.mobile = userData["mobile"] as? String
+    }
+  }
   
-  @IBAction func handleRegisterButton() {
+  @IBAction func handleVerifyButton() {
     guard let name = nameTextField.text,
       let email = emailTextField.text,
       let password = passwordTextField.text,
@@ -79,38 +88,38 @@ class RegisterViewController: UIViewController {
     userData = [
       "name": name,
       "email": email,
-      "mobile": mobile,
+      "mobile": sanitizeMobile(mobile),
       "carType": carType,
       "carModel": carModel,
       "address": address
     ]
 
     if let _ = userUid {
-      self.completeRegisteration()
+      self.completeRegistration()
       return
     }
 
     presentLoader(view)
     Auth.auth().createUser(withEmail: email,
                            password: password) { (user, error) in
-                            dismissLoader()
-                            
-                            if let error = error {
-                              self.present(buildAlert(withTitle: "Error",
-                                                      message: error.localizedDescription),
-                                           animated: true)
-                              return
-                            }
-                            
-                            guard let user = user else { return }
+      dismissLoader()
 
-                            self.userUid = user.uid
+      if let error = error {
+        self.present(buildAlert(withTitle: "Error",
+                                message: error.localizedDescription),
+                     animated: true)
+        return
+      }
 
-                            self.completeRegisteration()
+      guard let user = user else { return }
+
+      self.userUid = user.uid
+
+      self.completeRegistration()
     }
   }
 
-  func completeRegisteration() {
+  func completeRegistration() {
     presentLoader(view)
 
     let profile = Auth.auth().currentUser?.createProfileChangeRequest()
@@ -131,7 +140,10 @@ class RegisterViewController: UIViewController {
           return
         }
 
-      self.dismiss(animated: true)
+      self.performSegue(withIdentifier: "code", sender: [
+        "uid": self.userUid,
+        "mobile": self.userData?["mobile"] as? String
+      ])
     }
   }
 }

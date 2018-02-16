@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import MapKit
+import PhoneNumberKit
 
 func distanceString(_ distance: CLLocationDistance) -> String {
   let formatter = MKDistanceFormatter()
@@ -25,4 +26,14 @@ func durationString(_ duration: Double) -> String {
   formatter.maximumUnitCount = 1
   formatter.unitsStyle = .full
   return formatter.string(from: TimeInterval(duration))!
+}
+
+func sanitizeMobile(_ mobile: String) -> String {
+  var sanitizedMobile = ""
+  do {
+    let phoneNumberKit = PhoneNumberKit()
+    let parsedMobile = try phoneNumberKit.parse(mobile)
+    sanitizedMobile = phoneNumberKit.format(parsedMobile, toType: .e164)
+  } catch {}
+  return sanitizedMobile
 }

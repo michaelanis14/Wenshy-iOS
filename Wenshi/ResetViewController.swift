@@ -34,8 +34,8 @@ class ResetViewController: UIViewController {
 
       self.present(buildAlert(withTitle: "Forgot Password",
                               message: "Please follow the instructions sent to \"\(email)\".") { _ in
-                                self.navigationController?.popViewController(animated: true)
-        },
+                      self.navigationController?.popViewController(animated: true)
+                    },
                    animated: true)
     }
   }
