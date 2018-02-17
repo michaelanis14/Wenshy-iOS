@@ -34,20 +34,24 @@ func presentLoader(_ view: UIView) {
   }
 
   if let l = loader {
-    l.center = view.center
-    view.addSubview(l)
-    l.startAnimating()
+    DispatchQueue.main.async {
+      l.center = view.center
+      view.addSubview(l)
+      l.startAnimating()
 
-    UIApplication.shared.beginIgnoringInteractionEvents()
+      UIApplication.shared.beginIgnoringInteractionEvents()
+    }
   }
 }
 
 func dismissLoader() {
   if let l = loader {
-    l.stopAnimating()
-    l.removeFromSuperview()
+    DispatchQueue.main.async {
+      l.stopAnimating()
+      l.removeFromSuperview()
 
-    UIApplication.shared.endIgnoringInteractionEvents()
+      UIApplication.shared.endIgnoringInteractionEvents()
+    }
   }
 }
 

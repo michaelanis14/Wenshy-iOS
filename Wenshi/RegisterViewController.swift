@@ -136,7 +136,6 @@ class RegisterViewController: UIViewController {
           self.present(buildAlert(withTitle: "Error",
                                   message: error.localizedDescription),
                        animated: true)
-          print(error.localizedDescription)
           return
         }
 

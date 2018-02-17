@@ -42,6 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
 
+    /**
+     * PayMob
+     */
+    if let paymob = Bundle.main.infoDictionary?["PayMob"] as? [String: String],
+      let token = paymob["Token"],
+      let integrationID = paymob["IntegrationID"] {
+      PayMobApi.initialize(token: token, integrationID: integrationID)
+    }
+
     return true
   }
 

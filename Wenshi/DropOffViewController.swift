@@ -21,12 +21,11 @@ class DropOffViewController: UIViewController {
   @IBOutlet weak var carTypeLabel: UILabel!
   @IBOutlet weak var carModelLabel: UILabel!
 
+  var locationManager = CLLocationManager()
+  var firstLocationUpdate = false
   var pickUpLocation: CLLocation?
   var pickUpAddress: String?
   var service: String?
-
-  var locationManager = CLLocationManager()
-  var firstLocationUpdate = false
 
   override func viewDidLoad() {
     super.viewDidLoad()

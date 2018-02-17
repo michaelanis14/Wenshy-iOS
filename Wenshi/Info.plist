@@ -50,6 +50,13 @@
 	<string>1</string>
 	<key>FacebookAppID</key>
 	<string>$(FACEBOOK_APP_ID)</string>
+	<key>PayMob</key>
+	<dict>
+		<key>Token</key>
+		<string>$(PAYMOB_TOKEN)</string>
+		<key>IntegrationID</key>
+		<string>$(PAYMOB_INTEGRATION_ID)</string>
+	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
@@ -65,6 +72,8 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location to find nearby Wenshis.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need your camera to scan your debit/credit cards.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

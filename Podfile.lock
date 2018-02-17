@@ -65,6 +65,7 @@ PODS:
   - GTMSessionFetcher/Full (1.1.13):
     - GTMSessionFetcher/Core (= 1.1.13)
   - IQKeyboardManagerSwift (5.0.7)
+  - JSONRequest (0.7.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -88,8 +89,19 @@ DEPENDENCIES:
   - GeoFire
   - GoogleSignIn
   - IQKeyboardManagerSwift
+  - JSONRequest (from `https://github.com/hathway/JSONRequest`, tag `0.7.0`)
   - PhoneNumberKit
   - SideMenu
+
+EXTERNAL SOURCES:
+  JSONRequest:
+    :git: https://github.com/hathway/JSONRequest
+    :tag: 0.7.0
+
+CHECKOUT OPTIONS:
+  JSONRequest:
+    :git: https://github.com/hathway/JSONRequest
+    :tag: 0.7.0
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -109,11 +121,12 @@ SPEC CHECKSUMS:
   GTMOAuth2: c77fe325e4acd453837e72d91e3b5f13116857b2
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   IQKeyboardManagerSwift: 30fb3a61de1af53a95e02b80fb54ed0a19d5ede5
+  JSONRequest: d6d2c4e8d4c6b42945512bebf7c77f731a277fa7
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
 
-PODFILE CHECKSUM: 43cc1aa9f56de7f166d0873bcbc55ef73f27741d
+PODFILE CHECKSUM: 916c63d5d622b437a2db5d86471712f0a625a65b
 
 COCOAPODS: 1.4.0

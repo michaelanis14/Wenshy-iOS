@@ -17,6 +17,7 @@ target 'Wenshi' do
   pod 'GoogleSignIn'
   
   pod 'IQKeyboardManagerSwift'
+  pod 'JSONRequest', git: 'https://github.com/hathway/JSONRequest', tag: '0.7.0'
   pod 'PhoneNumberKit'
   pod 'SideMenu'
 end
