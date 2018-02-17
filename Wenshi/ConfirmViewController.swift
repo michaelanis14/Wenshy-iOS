@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreLocation
+import FirebaseAuth
+import FirebaseDatabase
+import GeoFire
 
 class ConfirmViewController: UIViewController {
   @IBOutlet weak var pickUpAddressLabel: UILabel!
@@ -27,8 +30,6 @@ class ConfirmViewController: UIViewController {
   var service: String?
   var carType: String?
   var carModel: String?
-  var piastersPerMeter = 0.5 // 5 EGP/Km
-  var secondsPerMeter = 0.09 // 40 Km/Hour
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,6 +46,27 @@ class ConfirmViewController: UIViewController {
       etaLabel.text = durationString(distance * secondsPerMeter)
       distanceLabel.text = distanceString(distance)
       fareLabel.text = moneyString(distance * piastersPerMeter)
+    }
+  }
+
+  @IBAction func handleSubmitButton() {
+    presentLoader(view)
+    if let location = pickUpLocation, let user = Auth.auth().currentUser {
+      let ref = Database.database().reference(withPath: "Requests")
+      let geoFire = GeoFire(firebaseRef: ref)
+      geoFire.setLocation(location, forKey: user.uid) { _ in
+        ref.child(user.uid).updateChildValues([
+          "service": self.service!,
+          "carType": self.carType!,
+          "carModel": self.carModel!,
+          "dropOff": self.dropOffLocation!.coordinate.latitudeAndLongitude,
+          "status": "open"
+        ]) { (_, _) in
+          dismissLoader()
+          
+          self.performSegue(withIdentifier: "submit", sender: nil)
+        }
+      }
     }
   }
 }

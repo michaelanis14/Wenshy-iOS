@@ -66,3 +66,12 @@ func reverseGeocode(latitude: CLLocationDegrees, longitude: CLLocationDegrees, c
     }
   })
 }
+
+func call(_ mobile: String) {
+  guard let mobileURL = URL(string: "tel://\(mobile)") else { return }
+  if #available(iOS 10.0, *) {
+    UIApplication.shared.open(mobileURL, options: [:], completionHandler: nil)
+  } else {
+    UIApplication.shared.openURL(mobileURL)
+  }
+}

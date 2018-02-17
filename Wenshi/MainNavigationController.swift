@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class MainNavigationController: UINavigationController {
   override func viewWillAppear(_ animated: Bool) {
