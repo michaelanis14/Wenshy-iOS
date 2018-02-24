@@ -43,12 +43,9 @@ class RequestViewController: UIViewController {
   }
 
   @IBAction func handleCancelButton() {
-    presentLoader(view)
     if let user = Auth.auth().currentUser {
       Database.database().reference(withPath: "Requests")
         .child(user.uid).removeValue() { (_, _) in
-          dismissLoader()
-          
           self.dismiss(animated: true)
       }
     }

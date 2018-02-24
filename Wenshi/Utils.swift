@@ -8,9 +8,16 @@
 
 import UIKit
 import CoreLocation
+import FirebaseDatabase
 
 var loader: UIActivityIndicatorView?
 var geocoder = CLGeocoder()
+
+enum Role: String {
+  case customer = "Customer"
+  case driver = "Driver"
+  case none = "None"
+}
 
 func buildAlert(withTitle title: String, message: String, done: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
   let alert = UIAlertController(title: title,
@@ -73,5 +80,25 @@ func call(_ mobile: String) {
     UIApplication.shared.open(mobileURL, options: [:], completionHandler: nil)
   } else {
     UIApplication.shared.openURL(mobileURL)
+  }
+}
+
+func findUser(_ uid: String, completion: @escaping (DataSnapshot?, Role) -> Void) {
+  Database.database().reference(withPath: "Users/Customers")
+    .child(uid)
+    .observeSingleEvent(of: .value) { (snapshot) in
+      guard snapshot.exists() else {
+        Database.database().reference(withPath: "Users/Drivers")
+          .child(uid)
+          .observeSingleEvent(of: .value) { (snapshot) in
+            guard snapshot.exists() else {
+              completion(nil, .none)
+              return
+            }
+            completion(snapshot, .driver)
+        }
+        return
+      }
+      completion(snapshot, .customer)
   }
 }

@@ -60,9 +60,11 @@ class PaymentTableViewController: UITableViewController {
 
       guard let paymentKey = paymentKey else { return }
 
+      guard let user = Auth.auth().currentUser, let email = user.email else { return }
+
       do {
         try self.accept.presentPayVC(vC: self,
-                                     billingData: ["email": "test@accou.nt"],
+                                     billingData: ["email": email],
                                      paymentKey: paymentKey,
                                      saveCardDefault: true,
                                      showSaveCard: true,

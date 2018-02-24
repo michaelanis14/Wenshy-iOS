@@ -137,40 +137,26 @@ class LoginViewController: UIViewController {
       guard let result = result else { return }
 
       presentLoader(self.view)
-      Database.database().reference(withPath: "Users/Customers")
-        .child(result.user.uid)
-        .observeSingleEvent(of: .value) { snapshot in
-          dismissLoader()
+      findUser(result.user.uid) { (snapshot, role) in
+        dismissLoader()
+        
+        guard let snapshot = snapshot else { return }
 
-          guard snapshot.exists() else {
-            presentLoader(self.view)
-            Database.database().reference(withPath: "Users/Drivers")
-              .child(result.user.uid)
-              .observeSingleEvent(of: .value) { snapshot in
-                dismissLoader()
+        switch role {
+        case .customer, .driver:
+          self.completeLogin(withUid: result.user.uid, snapshot: snapshot)
+        case .none:
+          var userData: [String : Any] = [
+            "uid": result.user.uid
+          ]
 
-                guard snapshot.exists() else {
-                  var userData: [String : Any] = [
-                    "uid": result.user.uid
-                  ]
-
-                  if let profile = result.additionalUserInfo?.profile {
-                    userData["name"] = profile["name"] as! String
-                    userData["email"] = profile["email"] as! String
-                  }
-
-                  self.performSegue(withIdentifier: "register", sender: userData)
-
-                  return
-                }
-
-                self.completeLogin(withUid: result.user.uid, snapshot: snapshot)
-            }
-
-            return
+          if let profile = result.additionalUserInfo?.profile {
+            userData["name"] = profile["name"] as! String
+            userData["email"] = profile["email"] as! String
           }
 
-          self.completeLogin(withUid: result.user.uid, snapshot: snapshot)
+          self.performSegue(withIdentifier: "register", sender: userData)
+        }
       }
     }
   }
