@@ -12,14 +12,18 @@ import FirebaseDatabase
 import AcceptSDK
 
 class PaymentTableViewController: UITableViewController {
+  #if IOS
   let accept = AcceptSDK()
+  #endif
   var cards: [(pan: String, type: String, token: String)] = []
   var selectedPayment = "cash"
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    #if IOS
     accept.delegate = self
+    #endif
 
     if let user = Auth.auth().currentUser {
       let userRef = Database.database().reference(withPath: "Users/Customers")
@@ -47,6 +51,11 @@ class PaymentTableViewController: UITableViewController {
   }
 
   @IBAction func handleAddButton() {
+    #if SIMULATOR
+      self.present(buildAlert(withTitle: "Error",
+                              message: "Payments not supported on Simulator"),
+                   animated: true)
+    #else
     presentLoader(view)
     PayMobApi.getPaymentKey(for: 100) { (paymentKey, error) in
       dismissLoader()
@@ -78,12 +87,14 @@ class PaymentTableViewController: UITableViewController {
                      animated: true)
       }
     }
+    #endif
   }
 
   @IBAction func handleDoneButton() {
     dismiss(animated: true, completion: nil)
   }
 
+  #if IOS
   func handlePayment(pay: PayResponse, savedCard: SaveCardResponse? = nil) {
     if let savedCard = savedCard {
       if let user = Auth.auth().currentUser {
@@ -98,6 +109,7 @@ class PaymentTableViewController: UITableViewController {
       }
     }
   }
+  #endif
 }
 
 extension PaymentTableViewController {
@@ -159,6 +171,7 @@ extension PaymentTableViewController {
   }
 }
 
+#if IOS
 extension PaymentTableViewController: AcceptSDKDelegate {
   func userDidCancel() {}
 
@@ -184,4 +197,4 @@ extension PaymentTableViewController: AcceptSDKDelegate {
 
   func userDidCancel3dSecurePayment(_ pendingPayData: PayResponse) {}
 }
-
+#endif
