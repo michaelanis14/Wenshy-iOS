@@ -17,6 +17,7 @@
 		C131524020373EF600A8460E /* AcceptSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C131523A2037375400A8460E /* AcceptSDK.framework */; };
 		C131524120373EF600A8460E /* AcceptSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C131523A2037375400A8460E /* AcceptSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C131524420375B1C00A8460E /* PayMobApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C131524320375B1C00A8460E /* PayMobApi.swift */; };
+		C16F6BBF204B7F4700E0818C /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F6BBE204B7F4700E0818C /* InviteViewController.swift */; };
 		C19E60932034F523002C0E0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60922034F523002C0E0C /* AppDelegate.swift */; };
 		C19E60952034F523002C0E0C /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60942034F523002C0E0C /* MainNavigationController.swift */; };
 		C19E60982034F523002C0E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C19E60962034F523002C0E0C /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		C13152342036AE9500A8460E /* Wenshi.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Wenshi.debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		C131523A2037375400A8460E /* AcceptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcceptSDK.framework; path = Frameworks/AcceptSDK.framework; sourceTree = "<group>"; };
 		C131524320375B1C00A8460E /* PayMobApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMobApi.swift; sourceTree = "<group>"; };
+		C16F6BBE204B7F4700E0818C /* InviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		C19E608F2034F523002C0E0C /* Wenshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wenshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19E60922034F523002C0E0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C19E60942034F523002C0E0C /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			name = Payment;
 			sourceTree = "<group>";
 		};
+		C16F6BBD204B7F2000E0818C /* Invite */ = {
+			isa = PBXGroup;
+			children = (
+				C16F6BBE204B7F4700E0818C /* InviteViewController.swift */,
+			);
+			name = Invite;
+			sourceTree = "<group>";
+		};
 		C19E60862034F523002C0E0C = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +162,7 @@
 				C19E60D32034FD00002C0E0C /* Rider */,
 				C19E60D62034FD17002C0E0C /* Driver */,
 				C1092221203792C200AA22CD /* Payment */,
+				C16F6BBD204B7F2000E0818C /* Invite */,
 				C19E60D72034FD28002C0E0C /* Settings */,
 				C19E60D82034FD32002C0E0C /* Shared */,
 			);
@@ -404,6 +415,7 @@
 				C19E60E62034FD85002C0E0C /* DriverViewController.swift in Sources */,
 				C109222D2038176400AA22CD /* Constants.swift in Sources */,
 				C109222B2038067E00AA22CD /* AcceptedViewController.swift in Sources */,
+				C16F6BBF204B7F4700E0818C /* InviteViewController.swift in Sources */,
 				C19E60952034F523002C0E0C /* MainNavigationController.swift in Sources */,
 				C10922292037FEEB00AA22CD /* RequestViewController.swift in Sources */,
 				C19E60E32034FD7E002C0E0C /* PickUpViewController.swift in Sources */,
