@@ -46,6 +46,7 @@ class MainNavigationController: UINavigationController {
       let userData = sender as? [String: Any] {
       vc.userUid = userData["uid"] as? String
       vc.mobile = userData["mobile"] as? String
+      vc.actionText = "Confirm"
     }
   }
 

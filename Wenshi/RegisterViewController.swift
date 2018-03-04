@@ -113,9 +113,11 @@ class RegisterViewController: UIViewController {
 
       guard let user = user else { return }
 
-      self.userUid = user.uid
+      user.sendEmailVerification { _ in
+        self.userUid = user.uid
 
-      self.completeRegistration()
+        self.completeRegistration()
+      }
     }
   }
 

@@ -12,23 +12,36 @@ import FirebaseDatabase
 
 class CodeViewController: UIViewController {
   @IBOutlet weak var codeTextField: UITextField!
+  @IBOutlet weak var registerButton: UIButton!
 
   let CODE_LENGTH = 6
 
   var userUid: String?
   var mobile: String?
+  var actionText: String?
   var verificationID: String?
+  var verifying = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    if let actionText = actionText {
+      registerButton.setTitle(actionText.uppercased(), for: .normal)
+    }
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
     guard let _ = userUid, let mobile = mobile else { return }
 
-    if let _ = verificationID { return }
+    if verifying { return }
 
     self.present(buildAlert(withTitle: "Verify",
                             message: "Please follow the instructions to verify \"\(mobile)\".") { _ in
-                   PhoneAuthProvider.provider().verifyPhoneNumber(mobile,
+                   self.verifying = true
+
+                   PhoneAuthProvider.provider().verifyPhoneNumber(sanitizeMobile(mobile),
                                                                   uiDelegate: nil) { (verificationID, error) in
                      if let error = error {
                        self.present(buildAlert(withTitle: "Error",
@@ -38,6 +51,7 @@ class CodeViewController: UIViewController {
                      }
 
                      self.verificationID = verificationID
+                     self.verifying = false
                    }
                  },
                  animated: true)
@@ -61,31 +75,60 @@ class CodeViewController: UIViewController {
                                                              verificationCode: code)
 
     presentLoader(view)
-    user.link(with: credential) { (_, error) in
-      dismissLoader()
-
-      if let error = error {
-        self.present(buildAlert(withTitle: "Error",
-                                message: error.localizedDescription),
-                     animated: true)
-        return
-      }
-
-      self.verificationID = nil
-
-      presentLoader(self.view)
-
-
-      findUser(user.uid) { (snapshot, role) in
+    if let _ = user.phoneNumber {
+      user.updatePhoneNumber(credential) { error in
         dismissLoader()
-        
-        guard let snapshot = snapshot else { return }
 
-        switch role {
-        case .customer, .driver:
-          self.completeVerification(withUid: user.uid, snapshot: snapshot, as: role.rawValue)
-        case .none:
+        if let error = error {
+          self.present(buildAlert(withTitle: "Error",
+                                  message: error.localizedDescription),
+                       animated: true)
           return
+        }
+
+        self.verificationID = nil
+
+        presentLoader(self.view)
+
+        findUser(user.uid) { (snapshot, role) in
+          dismissLoader()
+
+          guard let snapshot = snapshot else { return }
+
+          switch role {
+          case .customer, .driver:
+            self.completeVerification(withUid: user.uid, snapshot: snapshot, as: role.rawValue)
+          case .none:
+            return
+          }
+        }
+      }
+    } else {
+      user.link(with: credential) { (_, error) in
+        dismissLoader()
+
+        if let error = error {
+          self.present(buildAlert(withTitle: "Error",
+                                  message: error.localizedDescription),
+                       animated: true)
+          return
+        }
+
+        self.verificationID = nil
+
+        presentLoader(self.view)
+
+        findUser(user.uid) { (snapshot, role) in
+          dismissLoader()
+
+          guard let snapshot = snapshot else { return }
+
+          switch role {
+          case .customer, .driver:
+            self.completeVerification(withUid: user.uid, snapshot: snapshot, as: role.rawValue)
+          case .none:
+            return
+          }
         }
       }
     }
@@ -104,7 +147,10 @@ class CodeViewController: UIViewController {
     let refPath = "\(role)s"
     Database.database().reference(withPath: "Users/\(refPath)")
       .child(uid)
-      .updateChildValues(["verified": true]) { (error, ref) in
+      .updateChildValues([
+        "mobile": sanitizeMobile(mobile!),
+        "verified": true
+      ]) { (error, ref) in
         dismissLoader()
 
         if let error = error {

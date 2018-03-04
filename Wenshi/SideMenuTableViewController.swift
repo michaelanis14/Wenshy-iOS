@@ -26,7 +26,9 @@ class SideMenuTableViewController: UITableViewController {
     tableView.delegate = self
 
     avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width / 2
+  }
 
+  override func viewWillAppear(_ animated: Bool) {
     if let user = Auth.auth().currentUser {
       nameLabel.text = user.displayName ?? user.email
     }

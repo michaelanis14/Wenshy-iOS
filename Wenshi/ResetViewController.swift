@@ -22,12 +22,12 @@ class ResetViewController: UIViewController {
     }
 
     presentLoader(view)
-    Auth.auth().sendPasswordReset(withEmail: email) { err in
+    Auth.auth().sendPasswordReset(withEmail: email) { error in
       dismissLoader()
 
-      if let err = err {
+      if let error = error {
         self.present(buildAlert(withTitle: "Error",
-                                message: err.localizedDescription),
+                                message: error.localizedDescription),
                      animated: true)
         return
       }

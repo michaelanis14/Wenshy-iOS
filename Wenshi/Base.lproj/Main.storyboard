@@ -361,31 +361,6 @@
             </objects>
             <point key="canvasLocation" x="1702" y="-1698"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="8eN-DM-HUL">
-            <objects>
-                <viewController id="7rY-fm-fLk" customClass="SettingsViewController" customModule="Wenshi" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mTO-OZ-4ce"/>
-                        <viewControllerLayoutGuide type="bottom" id="jau-xF-asr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Krj-kv-m6A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="RG3-hF-vYh">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="save" id="cFd-X7-Rrp">
-                            <connections>
-                                <action selector="handleSaveButton" destination="7rY-fm-fLk" id="ud8-ki-gA9"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MxU-KC-RQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2666" y="-769"/>
-        </scene>
         <!--Side Menu Table View Controller-->
         <scene sceneID="ilv-is-sLh">
             <objects>
@@ -1135,12 +1110,67 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7rY-fm-fLk" kind="relationship" relationship="rootViewController" id="pHd-n5-jig"/>
+                        <segue destination="iMN-Ii-oSK" kind="relationship" relationship="rootViewController" id="iht-7s-Uqn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xR9-Xd-KxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1703" y="-767"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="KJX-Qx-0Bq">
+            <objects>
+                <tableViewController id="iMN-Ii-oSK" customClass="SettingsViewController" customModule="Wenshi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dnl-Y4-2OV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="setting" textLabel="UKp-RZ-rTY" detailTextLabel="lOm-7w-BG4" style="IBUITableViewCellStyleValue1" id="7c8-jP-u3w">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7c8-jP-u3w" id="CPa-Ki-hFd">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UKp-RZ-rTY">
+                                            <rect key="frame" x="16" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lOm-7w-BG4">
+                                            <rect key="frame" x="326" y="12" width="14" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="iMN-Ii-oSK" id="28e-3y-Nug"/>
+                            <outlet property="delegate" destination="iMN-Ii-oSK" id="Gbx-bv-35l"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="uf4-gv-yAK">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="RYB-3C-Rb7">
+                            <connections>
+                                <segue destination="iMN-Ii-oSK" kind="custom" customClass="DismissSegue" customModule="Wenshi" customModuleProvider="target" id="C5A-ZH-Nip"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="ur4-Uh-tRw" kind="presentation" identifier="code" id="QIk-4s-Mdr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPR-TL-3yA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2665" y="-769"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G6o-ZM-pXH">
@@ -1665,7 +1695,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER CODE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLx-F2-Zfv">
-                                <rect key="frame" x="16" y="72" width="343" height="228.5"/>
+                                <rect key="frame" x="16" y="28" width="343" height="272.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1701,6 +1731,7 @@
                     </view>
                     <connections>
                         <outlet property="codeTextField" destination="OHy-O1-djg" id="stR-kG-d0M"/>
+                        <outlet property="registerButton" destination="OyV-1x-MP5" id="jMs-8W-9nd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aos-bp-lh6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1715,7 +1746,7 @@
         <image name="wenshi" width="612" height="476"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nTm-cM-3R8"/>
+        <segue reference="QIk-4s-Mdr"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

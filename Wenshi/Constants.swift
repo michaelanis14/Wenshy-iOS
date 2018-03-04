@@ -10,3 +10,5 @@ import Foundation
 
 let piastersPerMeter = 0.5
 let secondsPerMeter = 0.18
+
+let prefLanguage = "WENSHI_LANG"
