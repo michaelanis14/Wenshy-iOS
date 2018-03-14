@@ -102,7 +102,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   GeoFire:
-    :commit: 3ceb516dc0559a777dca17598daecccd88703a02
+    :commit: ec0142288da576f129f47de33ca5908a99e70c2d
     :git: https://github.com/RaMin0/geofire-objc
   JSONRequest:
     :git: https://github.com/hathway/JSONRequest
