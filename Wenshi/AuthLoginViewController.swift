@@ -13,7 +13,7 @@ import FacebookCore
 import FacebookLogin
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class AuthLoginViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var facebookLoginButton: UIButton!
@@ -46,14 +46,15 @@ class LoginViewController: UIViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segue.destination {
-    case let vc as RegisterViewController:
+    case let vc as AuthRegisterViewController:
       if let userData = sender as? [String: Any] {
         vc.userData = userData
       }
-    case let vc as CodeViewController:
+    case let vc as AuthCodeViewController:
       if let userData = sender as? [String: Any] {
         vc.userUid = userData["uid"] as? String
         vc.mobile = userData["mobile"] as? String
+        vc.actionText = "Confirm"
       }
     default:
       return
@@ -137,40 +138,26 @@ class LoginViewController: UIViewController {
       guard let result = result else { return }
 
       presentLoader(self.view)
-      Database.database().reference(withPath: "Users/Customers")
-        .child(result.user.uid)
-        .observeSingleEvent(of: .value) { snapshot in
-          dismissLoader()
+      findUser(result.user.uid) { (snapshot, role) in
+        dismissLoader()
+        
+        guard let snapshot = snapshot else { return }
 
-          guard snapshot.exists() else {
-            presentLoader(self.view)
-            Database.database().reference(withPath: "Users/Drivers")
-              .child(result.user.uid)
-              .observeSingleEvent(of: .value) { snapshot in
-                dismissLoader()
+        switch role {
+        case .customer, .driver:
+          self.completeLogin(withUid: result.user.uid, snapshot: snapshot)
+        case .none:
+          var userData: [String : Any] = [
+            "uid": result.user.uid
+          ]
 
-                guard snapshot.exists() else {
-                  var userData: [String : Any] = [
-                    "uid": result.user.uid
-                  ]
-
-                  if let profile = result.additionalUserInfo?.profile {
-                    userData["name"] = profile["name"] as! String
-                    userData["email"] = profile["email"] as! String
-                  }
-
-                  self.performSegue(withIdentifier: "register", sender: userData)
-
-                  return
-                }
-
-                self.completeLogin(withUid: result.user.uid, snapshot: snapshot)
-            }
-
-            return
+          if let profile = result.additionalUserInfo?.profile {
+            userData["name"] = profile["name"] as! String
+            userData["email"] = profile["email"] as! String
           }
 
-          self.completeLogin(withUid: result.user.uid, snapshot: snapshot)
+          self.performSegue(withIdentifier: "register", sender: userData)
+        }
       }
     }
   }
@@ -206,7 +193,7 @@ class LoginViewController: UIViewController {
   }
 }
 
-extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
+extension AuthLoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
     dismissLoader()
 

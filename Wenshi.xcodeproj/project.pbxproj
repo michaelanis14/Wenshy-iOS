@@ -11,32 +11,34 @@
 		C10922232037930400AA22CD /* PaymentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10922222037930400AA22CD /* PaymentTableViewController.swift */; };
 		C10922252037E74F00AA22CD /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10922242037E74F00AA22CD /* DismissSegue.swift */; };
 		C10922272037F12000AA22CD /* CLLocationCoordinate2D+LatitudeAndLongitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10922262037F12000AA22CD /* CLLocationCoordinate2D+LatitudeAndLongitude.swift */; };
-		C10922292037FEEB00AA22CD /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10922282037FEEB00AA22CD /* RequestViewController.swift */; };
-		C109222B2038067E00AA22CD /* AcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109222A2038067E00AA22CD /* AcceptedViewController.swift */; };
+		C10922292037FEEB00AA22CD /* RiderRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10922282037FEEB00AA22CD /* RiderRequestViewController.swift */; };
+		C109222B2038067E00AA22CD /* RiderAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109222A2038067E00AA22CD /* RiderAcceptedViewController.swift */; };
 		C109222D2038176400AA22CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C109222C2038176400AA22CD /* Constants.swift */; };
 		C131524020373EF600A8460E /* AcceptSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C131523A2037375400A8460E /* AcceptSDK.framework */; };
 		C131524120373EF600A8460E /* AcceptSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C131523A2037375400A8460E /* AcceptSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C131524420375B1C00A8460E /* PayMobApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C131524320375B1C00A8460E /* PayMobApi.swift */; };
+		C161AFE220502DBD003AEDF9 /* DriverAcceptedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C161AFE120502DBC003AEDF9 /* DriverAcceptedViewController.swift */; };
+		C16F6BBF204B7F4700E0818C /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F6BBE204B7F4700E0818C /* InviteViewController.swift */; };
 		C19E60932034F523002C0E0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60922034F523002C0E0C /* AppDelegate.swift */; };
 		C19E60952034F523002C0E0C /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60942034F523002C0E0C /* MainNavigationController.swift */; };
 		C19E60982034F523002C0E0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C19E60962034F523002C0E0C /* Main.storyboard */; };
 		C19E609A2034F523002C0E0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C19E60992034F523002C0E0C /* Assets.xcassets */; };
 		C19E609D2034F523002C0E0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C19E609B2034F523002C0E0C /* LaunchScreen.storyboard */; };
 		C19E60A72034F7DF002C0E0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C19E60A62034F7DF002C0E0C /* GoogleService-Info.plist */; };
-		C19E60DC2034FD71002C0E0C /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60D92034FD71002C0E0C /* ResetViewController.swift */; };
-		C19E60DD2034FD71002C0E0C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60DA2034FD71002C0E0C /* RegisterViewController.swift */; };
-		C19E60DE2034FD71002C0E0C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60DB2034FD71002C0E0C /* LoginViewController.swift */; };
-		C19E60E22034FD7E002C0E0C /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60DF2034FD7E002C0E0C /* ConfirmViewController.swift */; };
-		C19E60E32034FD7E002C0E0C /* PickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60E02034FD7E002C0E0C /* PickUpViewController.swift */; };
-		C19E60E42034FD7E002C0E0C /* DropOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60E12034FD7E002C0E0C /* DropOffViewController.swift */; };
-		C19E60E62034FD85002C0E0C /* DriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60E52034FD85002C0E0C /* DriverViewController.swift */; };
+		C19E60DC2034FD71002C0E0C /* AuthResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60D92034FD71002C0E0C /* AuthResetViewController.swift */; };
+		C19E60DD2034FD71002C0E0C /* AuthRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60DA2034FD71002C0E0C /* AuthRegisterViewController.swift */; };
+		C19E60DE2034FD71002C0E0C /* AuthLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60DB2034FD71002C0E0C /* AuthLoginViewController.swift */; };
+		C19E60E22034FD7E002C0E0C /* RiderConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60DF2034FD7E002C0E0C /* RiderConfirmViewController.swift */; };
+		C19E60E32034FD7E002C0E0C /* RiderPickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60E02034FD7E002C0E0C /* RiderPickUpViewController.swift */; };
+		C19E60E42034FD7E002C0E0C /* RiderDropOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60E12034FD7E002C0E0C /* RiderDropOffViewController.swift */; };
+		C19E60E62034FD85002C0E0C /* DriverOnlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60E52034FD85002C0E0C /* DriverOnlineViewController.swift */; };
 		C19E60E92034FD8E002C0E0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60E72034FD8E002C0E0C /* SettingsViewController.swift */; };
 		C19E60EA2034FD8E002C0E0C /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60E82034FD8E002C0E0C /* SideMenuTableViewController.swift */; };
 		C19E60EE2034FD97002C0E0C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60EB2034FD97002C0E0C /* Utils.swift */; };
 		C19E60EF2034FD97002C0E0C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60EC2034FD97002C0E0C /* Helpers.swift */; };
 		C19E60F02034FD97002C0E0C /* CLPlacemark+CompactAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19E60ED2034FD97002C0E0C /* CLPlacemark+CompactAddress.swift */; };
 		C1E6F78620356B0200B870EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E6F78520356B0200B870EA /* MapKit.framework */; };
-		C1E6F78A20362B3000B870EA /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E6F78920362B3000B870EA /* CodeViewController.swift */; };
+		C1E6F78A20362B3000B870EA /* AuthCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E6F78920362B3000B870EA /* AuthCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,13 +62,15 @@
 		C10922222037930400AA22CD /* PaymentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTableViewController.swift; sourceTree = "<group>"; };
 		C10922242037E74F00AA22CD /* DismissSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 		C10922262037F12000AA22CD /* CLLocationCoordinate2D+LatitudeAndLongitude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+LatitudeAndLongitude.swift"; sourceTree = "<group>"; };
-		C10922282037FEEB00AA22CD /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
-		C109222A2038067E00AA22CD /* AcceptedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptedViewController.swift; sourceTree = "<group>"; };
+		C10922282037FEEB00AA22CD /* RiderRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderRequestViewController.swift; sourceTree = "<group>"; };
+		C109222A2038067E00AA22CD /* RiderAcceptedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderAcceptedViewController.swift; sourceTree = "<group>"; };
 		C109222C2038176400AA22CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C13152332036AE6300A8460E /* Wenshi.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Wenshi.release.xcconfig; sourceTree = SOURCE_ROOT; };
 		C13152342036AE9500A8460E /* Wenshi.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Wenshi.debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		C131523A2037375400A8460E /* AcceptSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AcceptSDK.framework; path = Frameworks/AcceptSDK.framework; sourceTree = "<group>"; };
 		C131524320375B1C00A8460E /* PayMobApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayMobApi.swift; sourceTree = "<group>"; };
+		C161AFE120502DBC003AEDF9 /* DriverAcceptedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAcceptedViewController.swift; sourceTree = "<group>"; };
+		C16F6BBE204B7F4700E0818C /* InviteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		C19E608F2034F523002C0E0C /* Wenshi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wenshi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19E60922034F523002C0E0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C19E60942034F523002C0E0C /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
@@ -75,20 +79,20 @@
 		C19E609C2034F523002C0E0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C19E609E2034F523002C0E0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C19E60A62034F7DF002C0E0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C19E60D92034FD71002C0E0C /* ResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
-		C19E60DA2034FD71002C0E0C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		C19E60DB2034FD71002C0E0C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C19E60DF2034FD7E002C0E0C /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
-		C19E60E02034FD7E002C0E0C /* PickUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUpViewController.swift; sourceTree = "<group>"; };
-		C19E60E12034FD7E002C0E0C /* DropOffViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropOffViewController.swift; sourceTree = "<group>"; };
-		C19E60E52034FD85002C0E0C /* DriverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverViewController.swift; sourceTree = "<group>"; };
+		C19E60D92034FD71002C0E0C /* AuthResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResetViewController.swift; sourceTree = "<group>"; };
+		C19E60DA2034FD71002C0E0C /* AuthRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthRegisterViewController.swift; sourceTree = "<group>"; };
+		C19E60DB2034FD71002C0E0C /* AuthLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthLoginViewController.swift; sourceTree = "<group>"; };
+		C19E60DF2034FD7E002C0E0C /* RiderConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderConfirmViewController.swift; sourceTree = "<group>"; };
+		C19E60E02034FD7E002C0E0C /* RiderPickUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderPickUpViewController.swift; sourceTree = "<group>"; };
+		C19E60E12034FD7E002C0E0C /* RiderDropOffViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderDropOffViewController.swift; sourceTree = "<group>"; };
+		C19E60E52034FD85002C0E0C /* DriverOnlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverOnlineViewController.swift; sourceTree = "<group>"; };
 		C19E60E72034FD8E002C0E0C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C19E60E82034FD8E002C0E0C /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		C19E60EB2034FD97002C0E0C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C19E60EC2034FD97002C0E0C /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		C19E60ED2034FD97002C0E0C /* CLPlacemark+CompactAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLPlacemark+CompactAddress.swift"; sourceTree = "<group>"; };
 		C1E6F78520356B0200B870EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		C1E6F78920362B3000B870EA /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		C1E6F78920362B3000B870EA /* AuthCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,14 @@
 			name = Payment;
 			sourceTree = "<group>";
 		};
+		C16F6BBD204B7F2000E0818C /* Invite */ = {
+			isa = PBXGroup;
+			children = (
+				C16F6BBE204B7F4700E0818C /* InviteViewController.swift */,
+			);
+			name = Invite;
+			sourceTree = "<group>";
+		};
 		C19E60862034F523002C0E0C = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,7 @@
 				C19E60D32034FD00002C0E0C /* Rider */,
 				C19E60D62034FD17002C0E0C /* Driver */,
 				C1092221203792C200AA22CD /* Payment */,
+				C16F6BBD204B7F2000E0818C /* Invite */,
 				C19E60D72034FD28002C0E0C /* Settings */,
 				C19E60D82034FD32002C0E0C /* Shared */,
 			);
@@ -175,11 +188,11 @@
 		C19E60D32034FD00002C0E0C /* Rider */ = {
 			isa = PBXGroup;
 			children = (
-				C19E60E02034FD7E002C0E0C /* PickUpViewController.swift */,
-				C19E60E12034FD7E002C0E0C /* DropOffViewController.swift */,
-				C19E60DF2034FD7E002C0E0C /* ConfirmViewController.swift */,
-				C10922282037FEEB00AA22CD /* RequestViewController.swift */,
-				C109222A2038067E00AA22CD /* AcceptedViewController.swift */,
+				C19E60E02034FD7E002C0E0C /* RiderPickUpViewController.swift */,
+				C19E60E12034FD7E002C0E0C /* RiderDropOffViewController.swift */,
+				C19E60DF2034FD7E002C0E0C /* RiderConfirmViewController.swift */,
+				C10922282037FEEB00AA22CD /* RiderRequestViewController.swift */,
+				C109222A2038067E00AA22CD /* RiderAcceptedViewController.swift */,
 			);
 			name = Rider;
 			sourceTree = "<group>";
@@ -187,10 +200,10 @@
 		C19E60D52034FD0E002C0E0C /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				C19E60DB2034FD71002C0E0C /* LoginViewController.swift */,
-				C19E60DA2034FD71002C0E0C /* RegisterViewController.swift */,
-				C1E6F78920362B3000B870EA /* CodeViewController.swift */,
-				C19E60D92034FD71002C0E0C /* ResetViewController.swift */,
+				C19E60DB2034FD71002C0E0C /* AuthLoginViewController.swift */,
+				C19E60DA2034FD71002C0E0C /* AuthRegisterViewController.swift */,
+				C1E6F78920362B3000B870EA /* AuthCodeViewController.swift */,
+				C19E60D92034FD71002C0E0C /* AuthResetViewController.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -198,7 +211,8 @@
 		C19E60D62034FD17002C0E0C /* Driver */ = {
 			isa = PBXGroup;
 			children = (
-				C19E60E52034FD85002C0E0C /* DriverViewController.swift */,
+				C19E60E52034FD85002C0E0C /* DriverOnlineViewController.swift */,
+				C161AFE120502DBC003AEDF9 /* DriverAcceptedViewController.swift */,
 			);
 			name = Driver;
 			sourceTree = "<group>";
@@ -401,26 +415,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C19E60E62034FD85002C0E0C /* DriverViewController.swift in Sources */,
+				C19E60E62034FD85002C0E0C /* DriverOnlineViewController.swift in Sources */,
 				C109222D2038176400AA22CD /* Constants.swift in Sources */,
-				C109222B2038067E00AA22CD /* AcceptedViewController.swift in Sources */,
+				C109222B2038067E00AA22CD /* RiderAcceptedViewController.swift in Sources */,
+				C16F6BBF204B7F4700E0818C /* InviteViewController.swift in Sources */,
 				C19E60952034F523002C0E0C /* MainNavigationController.swift in Sources */,
-				C10922292037FEEB00AA22CD /* RequestViewController.swift in Sources */,
-				C19E60E32034FD7E002C0E0C /* PickUpViewController.swift in Sources */,
-				C1E6F78A20362B3000B870EA /* CodeViewController.swift in Sources */,
+				C10922292037FEEB00AA22CD /* RiderRequestViewController.swift in Sources */,
+				C19E60E32034FD7E002C0E0C /* RiderPickUpViewController.swift in Sources */,
+				C1E6F78A20362B3000B870EA /* AuthCodeViewController.swift in Sources */,
 				C131524420375B1C00A8460E /* PayMobApi.swift in Sources */,
 				C19E60E92034FD8E002C0E0C /* SettingsViewController.swift in Sources */,
 				C19E60F02034FD97002C0E0C /* CLPlacemark+CompactAddress.swift in Sources */,
 				C10922232037930400AA22CD /* PaymentTableViewController.swift in Sources */,
-				C19E60DC2034FD71002C0E0C /* ResetViewController.swift in Sources */,
+				C19E60DC2034FD71002C0E0C /* AuthResetViewController.swift in Sources */,
 				C19E60932034F523002C0E0C /* AppDelegate.swift in Sources */,
-				C19E60E22034FD7E002C0E0C /* ConfirmViewController.swift in Sources */,
+				C19E60E22034FD7E002C0E0C /* RiderConfirmViewController.swift in Sources */,
 				C10922272037F12000AA22CD /* CLLocationCoordinate2D+LatitudeAndLongitude.swift in Sources */,
-				C19E60E42034FD7E002C0E0C /* DropOffViewController.swift in Sources */,
-				C19E60DE2034FD71002C0E0C /* LoginViewController.swift in Sources */,
-				C19E60DD2034FD71002C0E0C /* RegisterViewController.swift in Sources */,
+				C19E60E42034FD7E002C0E0C /* RiderDropOffViewController.swift in Sources */,
+				C19E60DE2034FD71002C0E0C /* AuthLoginViewController.swift in Sources */,
+				C19E60DD2034FD71002C0E0C /* AuthRegisterViewController.swift in Sources */,
 				C19E60EF2034FD97002C0E0C /* Helpers.swift in Sources */,
 				C19E60EA2034FD8E002C0E0C /* SideMenuTableViewController.swift in Sources */,
+				C161AFE220502DBD003AEDF9 /* DriverAcceptedViewController.swift in Sources */,
 				C10922252037E74F00AA22CD /* DismissSegue.swift in Sources */,
 				C19E60EE2034FD97002C0E0C /* Utils.swift in Sources */,
 			);
@@ -572,6 +588,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "app.Wenshi-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[sdk=iphoneos*]" = IOS;
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[sdk=iphonesimulator*]" = SIMULATOR;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -8,5 +8,10 @@
 
 import Foundation
 
-let piastersPerMeter = 0.5
-let secondsPerMeter = 0.18
+let piastersPerMeter: Double = 0.5
+let secondsPerMeter: Double = 0.18
+
+let prefLanguage = "WENSHI_LANG"
+
+let driverRange: Double = 15
+let requestWait: Double = 7

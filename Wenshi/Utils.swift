@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import MapKit
 import CoreLocation
+import FirebaseDatabase
 
 var loader: UIActivityIndicatorView?
 var geocoder = CLGeocoder()
+
+enum Role: String {
+  case customer = "Customer"
+  case driver = "Driver"
+  case none = "None"
+}
 
 func buildAlert(withTitle title: String, message: String, done: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
   let alert = UIAlertController(title: title,
@@ -75,3 +83,54 @@ func call(_ mobile: String) {
     UIApplication.shared.openURL(mobileURL)
   }
 }
+
+func findUser(_ uid: String, completion: @escaping (DataSnapshot?, Role) -> Void) {
+  Database.database().reference(withPath: "Users/Customers")
+    .child(uid)
+    .observeSingleEvent(of: .value) { (snapshot) in
+      guard snapshot.exists() else {
+        Database.database().reference(withPath: "Users/Drivers")
+          .child(uid)
+          .observeSingleEvent(of: .value) { (snapshot) in
+            guard snapshot.exists() else {
+              completion(nil, .none)
+              return
+            }
+            completion(snapshot, .driver)
+        }
+        return
+      }
+      completion(snapshot, .customer)
+  }
+}
+
+func after(_ seconds: Double, completion: @escaping () -> ()) {
+  DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
+}
+
+func overlayDirections(on mapView: MKMapView, from source: CLLocation, to destination: CLLocation) {
+  let sourceLocation = CLLocationCoordinate2D(latitude: source.coordinate.latitude,
+                                              longitude: source.coordinate.longitude)
+  let destinationLocation = CLLocationCoordinate2D(latitude: destination.coordinate.latitude,
+                                                   longitude: destination.coordinate.longitude)
+
+  let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
+  let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
+
+  let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+  let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+
+  let directionRequest = MKDirectionsRequest()
+  directionRequest.source = sourceMapItem
+  directionRequest.destination = destinationMapItem
+  directionRequest.transportType = .automobile
+
+  let directions = MKDirections(request: directionRequest)
+  directions.calculate { (response, _) in
+    guard let response = response else { return }
+
+    let route = response.routes[0]
+    mapView.add(route.polyline, level: .aboveRoads)
+  }
+}
+

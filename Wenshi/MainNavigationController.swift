@@ -27,35 +27,26 @@ class MainNavigationController: UINavigationController {
       return
     }
 
-    Database.database().reference(withPath: "Users/Customers")
-      .child(user.uid)
-      .observeSingleEvent(of: .value) { (snapshot) in
-        guard snapshot.exists() else {
-          Database.database().reference(withPath: "Users/Drivers")
-            .child(user.uid)
-            .observeSingleEvent(of: .value) { (snapshot) in
-              guard snapshot.exists() else {
-                self.performSegue(withIdentifier: "auth", sender: nil)
-                return
-              }
+    findUser(user.uid) { (snapshot, role) in
+      guard let snapshot = snapshot else { return }
 
-              self.completeMain(withUid: user.uid, snapshot: snapshot, as: "Driver")
-          }
-
-          return
-        }
-
-        self.completeMain(withUid: user.uid, snapshot: snapshot, as: "Customer")
+      switch role {
+      case .customer, .driver:
+        self.completeMain(withUid: user.uid, snapshot: snapshot, as: role.rawValue)
+      case .none:
+        self.performSegue(withIdentifier: "auth", sender: nil)
+      }
     }
 
     dismissLoader()
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? CodeViewController,
+    if let vc = segue.destination as? AuthCodeViewController,
       let userData = sender as? [String: Any] {
       vc.userUid = userData["uid"] as? String
       vc.mobile = userData["mobile"] as? String
+      vc.actionText = "Confirm"
     }
   }
 

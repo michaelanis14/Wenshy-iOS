@@ -86,7 +86,7 @@ DEPENDENCIES:
   - FirebaseAuth
   - FirebaseCore
   - FirebaseDatabase
-  - GeoFire
+  - GeoFire (from `https://github.com/RaMin0/geofire-objc`)
   - GoogleSignIn
   - IQKeyboardManagerSwift
   - JSONRequest (from `https://github.com/hathway/JSONRequest`, tag `0.7.0`)
@@ -94,11 +94,16 @@ DEPENDENCIES:
   - SideMenu
 
 EXTERNAL SOURCES:
+  GeoFire:
+    :git: https://github.com/RaMin0/geofire-objc
   JSONRequest:
     :git: https://github.com/hathway/JSONRequest
     :tag: 0.7.0
 
 CHECKOUT OPTIONS:
+  GeoFire:
+    :commit: 3ceb516dc0559a777dca17598daecccd88703a02
+    :git: https://github.com/RaMin0/geofire-objc
   JSONRequest:
     :git: https://github.com/hathway/JSONRequest
     :tag: 0.7.0
@@ -127,6 +132,6 @@ SPEC CHECKSUMS:
   PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
 
-PODFILE CHECKSUM: 916c63d5d622b437a2db5d86471712f0a625a65b
+PODFILE CHECKSUM: c0c7b507f7b900032db71be164a5d7bdd00e8e64
 
 COCOAPODS: 1.4.0

@@ -1,31 +1,30 @@
 //
-//  DropOffViewController.swift
+//  PickUpViewController.swift
 //  Wenshi
 //
-//  Created by Ramy Aboul Naga on 11/2/2018.
-//  Copyright © 2018 RaMin0 Development. All rights reserved.
+//  Created by Ramy Aboul Naga on 20/12/2017.
+//  Copyright © 2017 RaMin0 Development. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 import MapKit
-import FirebaseAuth
-import FirebaseDatabase
+import SideMenu
 
-class DropOffViewController: UIViewController {
-  @IBOutlet weak var pickUpAddressLabel: UILabel!
-  @IBOutlet weak var dropOffAddressLabel: UILabel!
+class RiderPickUpViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   @IBOutlet weak var myLocationButton: UIButton!
-  @IBOutlet weak var serviceLabel: UILabel!
-  @IBOutlet weak var carTypeLabel: UILabel!
-  @IBOutlet weak var carModelLabel: UILabel!
+  @IBOutlet weak var pickUpAddressLabel: UILabel!
 
+  var sideMenuManager = SideMenuManager.default
   var locationManager = CLLocationManager()
   var firstLocationUpdate = false
-  var pickUpLocation: CLLocation?
-  var pickUpAddress: String?
-  var service: String?
+  var selectedService: String?
+
+  let SERVICES = [
+    "Accident",
+    "Car Broke-down"
+  ]
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,36 +34,28 @@ class DropOffViewController: UIViewController {
     locationManager.requestWhenInUseAuthorization()
     locationManager.startUpdatingLocation()
 
+    sideMenuManager.menuPresentMode = .menuSlideIn
+    sideMenuManager.menuFadeStatusBar = false
+    let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "SideMenuNavigationController") as! UISideMenuNavigationController
+    sideMenuManager.menuLeftNavigationController = menuLeftNavigationController
+    // self.sideMenuManager.menuAddPanGestureToPresent(toView: viewController.view)
+    sideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: view, forMenu: .left)
+
     mapView.delegate = self
-
-    pickUpAddressLabel.text = pickUpAddress
-    serviceLabel.text = service
-
-    if let user = Auth.auth().currentUser {
-      Database.database().reference(withPath: "Users/Customers")
-        .child(user.uid)
-        .observeSingleEvent(of: .value) { snapshot in
-          guard snapshot.exists() else { return }
-
-          if let userData = snapshot.value as? [String: Any] {
-            self.carTypeLabel.text = userData["carType"] as? String
-            self.carModelLabel.text = userData["carModel"] as? String
-          }
-      }
-    }
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? ConfirmViewController {
-      vc.pickUpLocation = pickUpLocation
-      vc.pickUpAddress = pickUpAddressLabel.text
-      vc.dropOffLocation = CLLocation(latitude: mapView.centerCoordinate.latitude,
+    if let vc = segue.destination as? RiderDropOffViewController,
+      let requestData = sender as? [String: Any] {
+      vc.service = requestData["service"] as? String
+      vc.pickUpLocation = CLLocation(latitude: mapView.centerCoordinate.latitude,
                                      longitude: mapView.centerCoordinate.longitude)
-      vc.dropOffAddress = dropOffAddressLabel.text
-      vc.service = service
-      vc.carType = carTypeLabel.text
-      vc.carModel = carModelLabel.text
+      vc.pickUpAddress = pickUpAddressLabel.text
     }
+  }
+
+  @IBAction func handleMenuButton() {
+    present(self.sideMenuManager.menuLeftNavigationController!, animated: true)
   }
 
   @IBAction func handleMyLocationButton() {
@@ -74,9 +65,24 @@ class DropOffViewController: UIViewController {
       myLocationButton.isHidden = true
     }
   }
+
+  @IBAction func handleChooseServiceButton() {
+    let alert = UIAlertController(title: "Choose Service", message: nil, preferredStyle: .actionSheet)
+    for service in SERVICES {
+      alert.addAction(UIAlertAction(title: service, style: .default, handler: { action in
+        if let service = action.title {
+          self.performSegue(withIdentifier: "request", sender: [
+            "service": service
+          ])
+        }
+      }))
+    }
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+    present(alert, animated: true)
+  }
 }
 
-extension DropOffViewController: CLLocationManagerDelegate {
+extension RiderPickUpViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     if let coordinate = manager.location?.coordinate {
       if !firstLocationUpdate {
@@ -91,7 +97,7 @@ extension DropOffViewController: CLLocationManagerDelegate {
         reverseGeocode(latitude: coordinate.latitude,
                        longitude: coordinate.longitude,
                        completionHandler: { address in
-          self.dropOffAddressLabel.text = address
+          self.pickUpAddressLabel.text = address
         })
 
         myLocationButton.isHidden = true
@@ -102,7 +108,7 @@ extension DropOffViewController: CLLocationManagerDelegate {
   }
 }
 
-extension DropOffViewController: MKMapViewDelegate {
+extension RiderPickUpViewController: MKMapViewDelegate {
   func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
     for annotation in mapView.annotations {
       if let annotation = annotation as? MKPointAnnotation {
@@ -111,7 +117,7 @@ extension DropOffViewController: MKMapViewDelegate {
         reverseGeocode(latitude: mapView.centerCoordinate.latitude,
                        longitude: mapView.centerCoordinate.longitude,
                        completionHandler: { address in
-          self.dropOffAddressLabel.text = address
+          self.pickUpAddressLabel.text = address
         })
 
         myLocationButton.isHidden = false
