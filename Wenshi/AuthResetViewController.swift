@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class ResetViewController: UIViewController {
+class AuthResetViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
 
   @IBAction func handleResetButton() {

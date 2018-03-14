@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import PhoneNumberKit
 
-class RegisterViewController: UIViewController {
+class AuthRegisterViewController: UIViewController {
   @IBOutlet weak var nameTextField: UITextField!
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
@@ -62,7 +62,7 @@ class RegisterViewController: UIViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? CodeViewController,
+    if let vc = segue.destination as? AuthCodeViewController,
       let userData = sender as? [String: Any] {
       vc.userUid = userData["uid"] as? String
       vc.mobile = userData["mobile"] as? String

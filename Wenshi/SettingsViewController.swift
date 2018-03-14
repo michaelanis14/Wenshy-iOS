@@ -36,7 +36,7 @@ class SettingsViewController: UITableViewController {
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if let vc = segue.destination as? CodeViewController,
+    if let vc = segue.destination as? AuthCodeViewController,
       let userData = sender as? [String: Any] {
       vc.userUid = userData["uid"] as? String
       vc.mobile = userData["mobile"] as? String

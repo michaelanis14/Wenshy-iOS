@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 import CoreLocation
 import FirebaseDatabase
 
@@ -102,3 +103,34 @@ func findUser(_ uid: String, completion: @escaping (DataSnapshot?, Role) -> Void
       completion(snapshot, .customer)
   }
 }
+
+func after(_ seconds: Double, completion: @escaping () -> ()) {
+  DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
+}
+
+func overlayDirections(on mapView: MKMapView, from source: CLLocation, to destination: CLLocation) {
+  let sourceLocation = CLLocationCoordinate2D(latitude: source.coordinate.latitude,
+                                              longitude: source.coordinate.longitude)
+  let destinationLocation = CLLocationCoordinate2D(latitude: destination.coordinate.latitude,
+                                                   longitude: destination.coordinate.longitude)
+
+  let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
+  let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
+
+  let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+  let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+
+  let directionRequest = MKDirectionsRequest()
+  directionRequest.source = sourceMapItem
+  directionRequest.destination = destinationMapItem
+  directionRequest.transportType = .automobile
+
+  let directions = MKDirections(request: directionRequest)
+  directions.calculate { (response, _) in
+    guard let response = response else { return }
+
+    let route = response.routes[0]
+    mapView.add(route.polyline, level: .aboveRoads)
+  }
+}
+

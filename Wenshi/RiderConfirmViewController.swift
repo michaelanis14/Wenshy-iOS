@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import GeoFire
 
-class ConfirmViewController: UIViewController {
+class RiderConfirmViewController: UIViewController {
   @IBOutlet weak var pickUpAddressLabel: UILabel!
   @IBOutlet weak var dropOffAddressLabel: UILabel!
   @IBOutlet weak var serviceLabel: UILabel!
@@ -49,6 +49,13 @@ class ConfirmViewController: UIViewController {
     }
   }
 
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let vc = segue.destination as? RiderRequestViewController,
+      let data = sender as? [String: Any] {
+      vc.location = data["location"] as? CLLocation
+    }
+  }
+
   @IBAction func handleSubmitButton() {
     presentLoader(view)
     if let location = pickUpLocation, let user = Auth.auth().currentUser {
@@ -59,12 +66,13 @@ class ConfirmViewController: UIViewController {
           "service": self.service!,
           "carType": self.carType!,
           "carModel": self.carModel!,
-          "dropOff": self.dropOffLocation!.coordinate.latitudeAndLongitude,
-          "status": "open"
+          "dropOff": self.dropOffLocation!.coordinate.latitudeAndLongitude
         ]) { (_, _) in
           dismissLoader()
           
-          self.performSegue(withIdentifier: "submit", sender: nil)
+          self.performSegue(withIdentifier: "submit", sender: [
+            "location": location
+          ])
         }
       }
     }

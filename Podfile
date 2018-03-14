@@ -11,7 +11,7 @@ target 'Wenshi' do
   pod 'FirebaseCore'
   pod 'FirebaseAuth'
   pod 'FirebaseDatabase'
-  pod 'GeoFire'
+  pod 'GeoFire', git: 'https://github.com/RaMin0/geofire-objc'
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'GoogleSignIn'

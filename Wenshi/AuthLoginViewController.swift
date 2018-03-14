@@ -13,7 +13,7 @@ import FacebookCore
 import FacebookLogin
 import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class AuthLoginViewController: UIViewController {
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   @IBOutlet weak var facebookLoginButton: UIButton!
@@ -46,11 +46,11 @@ class LoginViewController: UIViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segue.destination {
-    case let vc as RegisterViewController:
+    case let vc as AuthRegisterViewController:
       if let userData = sender as? [String: Any] {
         vc.userData = userData
       }
-    case let vc as CodeViewController:
+    case let vc as AuthCodeViewController:
       if let userData = sender as? [String: Any] {
         vc.userUid = userData["uid"] as? String
         vc.mobile = userData["mobile"] as? String
@@ -193,7 +193,7 @@ class LoginViewController: UIViewController {
   }
 }
 
-extension LoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
+extension AuthLoginViewController: GIDSignInDelegate, GIDSignInUIDelegate {
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
     dismissLoader()
 

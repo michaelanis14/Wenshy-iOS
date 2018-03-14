@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class CodeViewController: UIViewController {
+class AuthCodeViewController: UIViewController {
   @IBOutlet weak var codeTextField: UITextField!
   @IBOutlet weak var registerButton: UIButton!
 
