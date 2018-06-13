@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-import AcceptSDK
+//import AcceptSDK
 
 class PaymentTableViewController: UITableViewController {
   #if IOS
